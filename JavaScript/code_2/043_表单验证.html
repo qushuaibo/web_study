@@ -1,0 +1,106 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-01 17:17:01
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-02 14:50:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        top: 40%;
+        left: 40%;
+        position: fixed;
+        width: 210px;
+        height: 200px;
+        background-color: lightblue;
+        border: 1px solid black;
+        text-align: center;
+      }
+      #div1 input {
+        width: 200px;
+        height: 30px;
+        font-size: 18px;
+        margin-top: 10px;
+      }
+      #div1 span {
+        font-size: 16px;
+        color: red;
+      }
+    </style>
+    <script>
+      /* 
+            事件驱动函数： onlick
+                         onblur   失去焦点
+         */
+      function func() {
+        // 拿到别的元素
+        var oUsername = document.getElementById("username");
+        var oUsernameSpan = document.getElementById("username_span");
+        // 拿到表单元素
+        var oValue = oUsername.value;
+
+        // 判断 是否复合要求
+        if (oValue.length < 6 || oValue.length > 18) {
+          // 双标签 通过 innerHTML
+          oUsernameSpan.innerHTML = "！长度应该是6-18的字符";
+        }
+        // 判断首字符是否是字母
+        else if (!isABC(oValue[0])) {
+          oUsernameSpan.innerHTML = "首字母必须是英文字母";
+        } else {
+          var isYes = true; // 假设复合要求
+          for (var i = 0; i < oValue.length; i++) {
+            if (!isEDF(oValue[i])) {
+              isYes = false;
+              break;
+            }
+          }
+          if (isYes) {
+            oUsernameSpan.innerHTML = "√";
+          } else {
+            oUsernameSpan.innerHTML = "！邮件必须是由数字、字母、下划线组成";
+          }
+        }
+      }
+
+      function isABC(charStr) {
+        if (
+          (charStr >= "a" && charStr <= "z") ||
+          (charStr >= "A" && charStr <= "z")
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      // 判断单个字母是否是下划线
+      function isEDF(charStr) {
+        if (
+          (charStr >= "a" && charStr <= "z") ||
+          (charStr >= "A" && charStr <= "Z") ||
+          (charStr >= "0" && charStr <= "9") ||
+          charStr == "_"
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="div1">
+      <input id="username" type="text" placeholder="用户名" onblur="func();" />
+      <span id="username_span"
+        >6-18个字符，可以使用字母、数字、下划线 英文字母开头</span
+      >
+      <input type="text" placeholder="密码" />
+    </div>
+  </body>
+</html>

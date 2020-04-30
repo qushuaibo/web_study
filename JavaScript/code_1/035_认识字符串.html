@@ -1,0 +1,69 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-31 12:16:04
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-31 21:31:49
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            字符串的声明：
+                1、通过new运算符声明字符串
+                2、省略new声明
+                3、字符串常量赋值
+         */
+        var str1 = new String(100);
+        // alert(str1+3);
+
+        var str2 = "100";
+        // alert(str2);
+        
+        /* 
+            访问字符串中字符：
+                字符串.length 访问字符个数
+                中文：utf-8(三个字符表示一个汉字) gbk(两个字符表示一个汉字)
+                    在计数的时候一个字代表一个
+
+            访问单个字符：
+                字符串.hcarAt(下标)
+                字符串[]
+
+            注 字符串无法修改,只能重新生成才行
+                字符串既是基本数据类型，又是复合数据类型
+         */
+        var str1 = "hello 北京";
+        // alert(str1.charAt(0));
+        // alert(str1[3]);
+
+        str1[4] = "x";
+        // alert(str1);
+
+        var str1 = new String(100);    // 对象
+        document.write(typeof str1);
+        document.write('<br>');
+
+        var str2 = String(100);       // string
+        document.write(typeof str2);
+        document.write('<br>');
+
+        var str3 = "100";                 // string
+        document.write(typeof str3);
+        document.write('<br>');
+        
+        
+        
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

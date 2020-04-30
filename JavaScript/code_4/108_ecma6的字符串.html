@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-23 22:57:19
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-23 23:03:12
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 
+            字符串：单引号 和双引号
+
+            ecma6字符串：反引号
+                1、想怎么写就输出什么
+                2、${变量/函数调用}
+            ``
+         */
+      var str = "hello\
+          word";
+      alert(str);
+
+      var str = `hello
+                    word`;
+      alert(str);
+
+      function showSelf({ name, age, sex = "男" }) {
+        alert(`我叫${name},今年${Math.max(10,20)},是一位${sex}性`);
+      }
+      showSelf({
+        age: 19,
+        name: "琚帅波",
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

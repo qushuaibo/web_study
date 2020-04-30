@@ -1,0 +1,64 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-03 07:59:52
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-03 08:28:52
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+              /*
+                  BOM: browser object model 浏览器对象模型
+               */
+             /*
+                  系统对话框
+                      window (方法一般可以省略)
+                          alert()  弹出对话框
+                          window.alert() // 实际上window的标签
+                          所有定义的函数都可以用window. 调用
+                                function show() {
+                                    alert("h");
+                                    }
+                                alert(window.show());
+                                show(); 
+
+                          confirm()  弹出一个带确定的对话框
+                                  返回值：确定 true 取消返回false
+                            
+                            prompt() 弹出一个带输入框的提示框
+                                    参数：
+                                        第一个参数：面板上显示的内容
+                                        第二个参数：输入框默认显示的内容
+                                    返回值：确定：输入的内容
+                                           点击取消：null
+                            open()
+                                    参数
+                                        第一个参数：要跳转的url
+                                        第二个参数：给当前打开的窗口一个名字
+                                        第三个参数：一串特殊含义的字符串
+                                            (有好多)
+              */
+
+        // var a = confirm("你是不是傻");
+        // document.write(a);
+        // var res = prompt("请输入内容","100");
+        // document.write(res);
+        function btnClick() {
+            // window.open()
+            open("https://www.baidu.com","xx","width=400,height=400,top=200;left=200");
+          }
+
+        
+
+
+    </script>
+  </head>
+  <body>
+       <button onclick="btnClick()">打开窗口</button>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-24 19:36:16
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-24 20:47:34
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    /*
+     */
+
+    function Dog({ name, type, age }) {
+      this.name = name;
+      this.type = type;
+      this.age = age;
+    }
+    Dog.prototype = {
+      run: function () {
+        alert(this.name + "会飞的奔跑");
+      },
+      showSelf: function () {
+        alert(`这是一个${this.type}的，${this.age}岁，叫${this.name}的小狗`);
+      },
+    };
+    var xiaohei = new Dog({
+      name: "小黑",
+      type: "比熊",
+      age: 3,
+    });
+    function Teddy({ name, type, age, color }) {
+      // 继承属性
+      Dog.call(this, {
+        name: name,
+        type: type,
+        age: age,
+      });
+      // 添加自己的属性
+      this.color = color;
+    }
+    // 正确继承的方法
+    for (var funcName in Dog.prototype) {
+      Teddy.prototype[funcName] = Dog.prototype[funcName];
+    }
+    Teddy.prototype.showColor = function () {
+      alert(this.color);
+    };
+    var xiaohong = new Teddy({
+      name: "小花",
+      type: "泰迪",
+      age: 10,
+      color: "红色",
+    });
+
+    /* 
+                构造函数构造出来的对象 有一个属性__proto__
+                指向构造函数这个对象的构造函数的原型
+    */
+    // alert(xiaohei.__proto__ == Dog.prototype);
+    // alert(xiaohong.__proto__ == Teddy.prototype);
+    
+    /* 
+        判读某个对象是否是构造函数构造的 
+        instanceof 实例
+     */
+    alert(xiaohong instanceof Teddy);
+    alert(xiaohong instanceof Dog);
+    alert(xiaohong instanceof Object);
+    xiaohei.showSelf();
+    
+
+
+  </script>
+  <body></body>
+</html>

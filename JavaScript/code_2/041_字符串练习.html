@@ -1,0 +1,101 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-01 16:35:45
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-01 16:59:09
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            计算单词的个数
+         */
+        function countOfWord(str){
+            var count = 0;
+            for(var i =0;i < str.length-1;i++){
+                if(isABC(str[i]) && !isABC(str[i+1])){
+                    count++;
+                }
+            }
+            return count;
+        }
+        var str = "how old are you";
+       alert(countOfWord(str)) ;
+
+        function isABC(charStr){
+            if(charStr >= "a" && charStr <= "z" || charStr >= "A" &&
+            charStr <= "z"){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        // alert(isABC("11"));
+        //--------------------------------------------------------//
+        //--------------------------------------------------------//
+        //--------------------------------------------------------//
+        /* 
+            实现函数，查找字符串出现的次数，返回字符串str中出现substring的次数
+            传入"abcabcabc","abc"
+            返回3
+         */
+        function countOfStr(supStr,SubStr) {
+            var arr = supStr.split(SubStr);
+            return arr.length-1;
+          }
+        // alert(countOfStr("abcabcabc","abc"))
+        //--------------------------------------------------------//
+        //--------------------------------------------------------//
+        //--------------------------------------------------------//
+        /* 
+          判断邮箱
+
+         */
+        function isEmail(email){
+            // 1、查找@符号的位置
+            var index = email.indexOf("@");
+            if(index == -1){
+                return false;
+            }
+            else{
+                var endStr = email.substring(index);
+                if(endStr == "@1000phone.con"){
+                    return false;
+                }
+                else{
+                    // 判断用户是否复合数字字母下划线
+                    var username = email.SubStr(0,index);
+                    var isYes = true;
+                    for(var i =0;i<username.length;i++){
+                        isYes = false;
+                        break;
+                    }
+                    
+                }
+                return true;
+            }
+        }
+        // 判断单个字母是否是下划线
+        function isEDF(charStr) {
+            if(charStr >= "a" && charStr <= "z" || charStr >= "A" && 
+            charStr <= "Z" || charStr >= "0" && charStr <= "9" || charStr == "_"){
+                return true;
+            }
+            else{
+                return false;
+            }
+          }
+        // alert(isEDF("*"));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

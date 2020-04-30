@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-11 13:58:06
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-16 19:01:37
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            番茄炒蛋
+                番茄 + 鸡蛋 + 调料
+            
+            事件绑定
+                元素节点.on + 事件类型 = 匿名函数;
+                系统会结合事件绑定一旦完成的时候，生成一个事件对象
+
+                触发的事件，系统会自动调用事件的函数
+         */
+//         function show(ev) {
+// /*             alert("hello world");
+//             alert(arguments.length);
+//             alert(arguments[0]); */
+//             // 兼容ie8以下 获得事件对象
+//             var e = ev || window.event;
+//             alert(e);
+//           }
+        window.onload = function () {
+            var oBtn = document.getElementById("btn1");
+            oBtn.onclick = function (ev) {  
+                // 对象事件的获取方式
+                var e  = ev || window.event;
+                alertl(e);
+            }
+
+
+          }
+
+    </script>
+</head>
+<body>
+    <button id='btn1'>按钮</button>
+    
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-03 00:40:43
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-03 01:16:34
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            定时器：
+                格式：
+                    setInterval(函数，毫秒数);
+                功能：每个指定时间，执行一次传入的函数
+                返回值：系统分配的编号
+
+                clearInterval(timer); 取消定时器
+         */
+/*         var i = 0 ;
+        function show(){
+            if(i == 5){
+                clearInterval(timer);
+            }
+            document.write(i++ + "<br/>");
+        }
+        
+        var timer =  setInterval(show,1000); */
+        
+        // 另一种写法
+        // 函数赋值给show
+/*         var i = 0;
+        var show = function(){
+            if(i == 5){
+                clearInterval(timer);
+            }
+            document.write(i++ + "<br>");
+        }
+        
+        var timer = setInterval(show,1000); */
+
+        // 匿名函数
+        var i = 0;
+        var timer = setInterval(function () {
+            if(i == 3){
+                clearInterval(timer);
+            }
+            document.write(i++ +"<br>");
+          },1000)
+        
+    
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

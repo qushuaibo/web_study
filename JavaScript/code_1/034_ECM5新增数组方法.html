@@ -1,0 +1,109 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-31 11:42:15
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-31 12:15:09
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            indexOf()
+                格式：数组.indexOf(item,start);
+                参数：item 任意参数
+                    start 下标 可以不传入 默认0
+                功能：在数组中查找第一次出现item的下标
+                返回值： -1 没有查到
+                        >= 0 数组的下标
+         */
+        var arr = [1,2,3,4,2];
+        var index = arr.indexOf(12,2);
+        // document.write(index);
+
+        /* 
+            数组遍历
+                for
+                for in
+                forEach
+         */
+        var arr = [1,2,3,4]
+        arr.forEach(function(item,index,arr){
+            /* 
+                item 当前遍历的元素
+                index 当前遍历元素的下标
+                arr 数组本身
+             */
+            document.write(item+","+index+","+arr+"<br>");
+        })
+        /* 
+            map
+                对原数组进行映射
+         */
+        var arr = [1,2,3,4];
+        var new_arr = arr.map(function(item,index,arr){
+            return item*3;
+        })
+        document.write(new_arr+"<br>");
+        /* 
+            filter 
+                过滤，得到复合条件的元素
+                返回：复合条件的元素
+         */
+        var arr = [1,2,3,4];
+        var new_arr = arr.filter(function(item,index,arr){
+            return item>3;
+        })
+        document.write(new_arr+"<br>");
+
+        /* 
+            some
+                查找是否有复合条件的元素
+                返回：布尔值
+                短路操作：只要找到一个就停止
+         */
+        var arr = [1,2,3,4];
+        var new_arr = arr.some(function(item,index,arr){
+            return item>3;
+        })
+        document.write(new_arr+"<br>");
+        /* 
+            every 
+            每一个元素都复合条件
+            返回：布尔值
+         */
+        var arr = [1,2,3,4];
+        var new_arr = arr.every(function(item,index,arr){
+            return item<5;
+        })
+        document.write(new_arr+"<br>");
+        /* 
+            reduce 归并
+         */
+        var arr = [1,2,3,4];
+        
+        var res = arr.reduce(function(prev,next,index,arr){
+            /* 
+                prev 第一次时，下标位0的元素
+                    第二次开始，上一次遍历return的值
+                next：从下标位1开始，当前遍历到的元素
+                arr 数组本身
+             */
+            alert(prev+","+next);
+            return prev+next;
+        })
+        alert(res);
+
+
+    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

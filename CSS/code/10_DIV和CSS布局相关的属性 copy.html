@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>div+css布局（div+span以及盒模型）</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+         body{
+             padding:0;
+             margin: 0;
+         }
+         .div1{
+             width:300px;
+             height: 300px;
+             background-color: red;
+             position: relative;
+             left:  10px;
+             top: 10px;
+
+         }
+         .span1{
+             /*相对与父元素定位*/
+             position:absolute;
+             background-color: #fff;
+             top:10px;
+             left:20px;
+         }
+         .div2{
+             position:fixed;
+             width: 200px;
+             background-color:rebeccapurple;
+             top:0;
+             z-index:1;
+         }
+         .div3,.div4{
+             width:20px;
+             background-color: green;
+             display: inline-block;
+
+         }
+        </style>
+    </head>
+    <body>
+        <div class="div2">
+            <p>联系电话：42464445</p>
+            <p>联系电话：42464445</p>
+            <p>联系电话：42464445</p>
+        </div>
+        <div class="div1">
+            <span class='span1'>浏览次数</span>
+        </div>
+        <div class='div3'>
+            <p>琚帅波</p>
+        </div>
+        <div class='div4'>
+            <p>琚帅波</p>
+        </div>
+        <span>
+
+        </span>
+    </body>
+</html>

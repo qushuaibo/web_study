@@ -1,0 +1,48 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-29 19:11:23
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-29 19:59:43
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        $(function () {  
+            // $("li").css("backgroundColor","red")
+
+            // $("ul").find("li").css("backgroundColor","red")
+            // 和 find差不多
+            // $("ul li").css("backgroundColor","red");
+            // name = hello
+            $("ul").find("[name=hello]").css("backgroundColor","red")
+
+            /* 
+                Index() 获取当前节点在兄弟节点的下标
+             */
+
+
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li class="box">box</li>
+        <li name="hello">hello</li>
+        <li class="box">box</li>
+    </ul>    
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+</body>
+</html>

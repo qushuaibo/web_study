@@ -1,0 +1,76 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-30 17:55:32
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-30 18:08:25
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            $().click(function(){
+
+            })
+            // 可以重复绑定 不会覆盖
+
+            on和off
+         */
+        $(function () {
+            // $("#div1").click(function () { 
+            //     alert(1);
+            //  })
+            //  $("#div1").click(function () {  
+            //      alert(2);
+            //  })
+
+            // 1 给一个事件添加函数
+            // $("#div1").on("click", function () {
+            //     alert("hello");
+            // })
+
+            // 2 同时给多个事件添加一个函数 多个事件之间用空格隔开
+            // var i =0;
+            // $("#div1").on("click mouseover",function () { 
+            //     $(this).html(i++);
+            //  })
+
+             //3 给不同的事件添加不同的函数
+             $("#div1").on({
+                 click:function(){
+                     alert('点击');
+                 },
+                 mouseover:function () { 
+                     $(this).css("backgroundColor","blue")
+                  }
+
+             })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</body>
+
+</html>

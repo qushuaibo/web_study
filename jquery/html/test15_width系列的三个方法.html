@@ -1,0 +1,49 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-30 16:39:35
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-30 17:30:02
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 1px solid black;
+            padding: 8px;
+            margin: 4px;
+            
+        }
+    </style>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        /*
+            width()   innerWidth()   outerWidth()  outerWidth(true)
+            height()   -----------------------------
+            offsetWidth   =   width+border+padding
+         */
+        $(function () { 
+            // alert($("#div1").css("width")); // 带px的字符串
+            alert($("#div1").width());
+            alert($("#div1").innerWidth()); // width+padding
+            alert($("#div1").outerWidth()); // width+border+padding
+            alert($("#div1").outerWidth(true)); // width+border+padding+margin
+        
+         })
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-04 01:01:19
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-04 13:06:06
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            setAttribute
+            getAttribute
+            removeAttriute();
+
+         */
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            // alert(oDiv.id);
+            // alert(oDiv.title);
+            // alert(oDiv.name);  // name只对表单元素来说是有用的
+
+            // alert(oDiv.getAttribute("id"));  
+            // alert(oDiv.getAttribute("title"));
+            /* 
+                区别 
+                    class 的访问
+             */
+            // alert(oDiv.className);
+            // alert(oDiv.getAttribute("class"));
+            /* 
+                行间自定义属性
+             */
+            // alert(oDiv.xxx);
+            // alert(oDiv.getAttribute("xxx"));  // 支持自定义属性
+            
+            /* 
+                设置属性
+             */
+            oDiv.className = "box4";
+            oDiv.zzz = "ooo";  // 可以设置自定义属性 但不会显示
+            alert(oDiv.zzz);
+            
+            oDiv.setAttribute("class","box5");
+            oDiv.setAttribute("zzz","ooo");  // 可以显示自定义属性
+
+            /* 
+                删除属性
+             */
+            oDiv.className = "";  // 设置为空字符串  实际上没有删除
+            oDiv.removeAttribute("title"); // 直接删除
+
+            // inner 内部
+            // alert(oDiv.innerHTML);
+            // 赋值
+            // oDiv.innerHTML = "<h1>h1</h1>"
+
+            // alert(oDiv.innerText); // 纯文本
+            // oDiv.innerText = "<h1>h1</h1>"  //不会解析
+            
+            alert(oDiv.outerHTML); // 外标签
+            oDiv.outerHTML = "<h1>h1</h1>";
+            
+            
+                
+        }
+        /* 
+            innerHTML  获取标签中的内容
+            innerText 获取标准中的纯文本
+            
+            outerHTML 从外标签开始到外标签结束
+            value  获取表单元素内容
+         */
+        
+
+
+    </script>
+</head>
+<body>
+    <div id="div1" title='hello' name='world' class='box' xxx = "yyy">
+        div文本<em>em文本</em><strong>strong文本</strong>
+    </div>
+    
+</body>
+</html>

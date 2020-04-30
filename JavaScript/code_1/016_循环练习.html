@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /*
+        */
+       var water = 15;
+       var count = 0;
+       while(water <= 50){
+           count++
+           water += 5
+       }
+       alert(count);
+
+       /*
+            质数和合数
+       */
+       var num =41;
+       var isYes =false;  // 是质数
+       for (var i=2; i < num;i++){
+            if(num % i == 0){
+                isYes = true;
+                break;
+            }
+       }
+       if(isYes){
+           alert(num+"，是一个合数");
+       }
+       else{
+           alert(num+",是一个质数");
+       }
+       // 水仙花束 各个位数立方和等于该本身 三位数
+       for(var i =100;i < 1000;i++){
+            var a = i % 10;
+            var b = parseInt(i/10)%10;
+            var c = parseInt(i/100);
+
+            // 立方和
+            var sum = Math.pow(a,3)+Math.pow(b,3)+Math.pow(c,3);
+            if(sum == i){
+                document.write(i);
+                document.write("<br/>");
+            }
+       }
+
+       /*
+            输出年月日，计算某一天是该年的第几天
+       */
+      var year = 2000;
+      var month = 8;
+      var date = 8;
+      var sum = 0;
+      switch(month){
+          case 12:
+              sum +=31;
+          case 11: 
+              sum +=30;
+          case 10:
+              sum +=31;
+          case 8:
+              sum +=31;
+          case 9:
+              sum +=30;
+          case 8:
+              sum +=31;
+          case 7:
+              sum +=31;
+          case 6:
+              sum +=30;
+          case 5:
+              sum +=31;
+          case 4:
+              sum +=30;
+          case 3:
+              sum +=31;
+              if (year%4 ==0 && year%100!=0 || year%400 ==0){
+                sum += 1;
+              }
+          case 2:
+              sum +=28;
+          case 1:
+                sum += date;
+                break;
+          default:
+              alert("error");
+              break;
+      }
+      alert("这是第"+sum+"天");
+
+    //   var week = parseInt(sum/7)+1;
+      var week = Math.ceil(sum/7);  // 向上取整
+      alert("这是第"+week+"周");
+      
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

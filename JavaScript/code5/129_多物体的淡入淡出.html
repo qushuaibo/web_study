@@ -1,0 +1,71 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-28 01:07:13
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-28 01:22:52
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 50px;
+            background-color: red;
+            margin: 100px;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+    </style>
+    <script>
+        window.onload = function () {  
+            var aDivs = document.getElementsByTagName("div") 
+            
+            for(var i =0;i<aDivs.length;i++){
+                aDivs[i].alpha = 30;
+                aDivs[i].onmouseover = function () {  
+                    // alert('msg');
+                    startMove(this,100)
+                }
+                aDivs[i].onmouseout = function () {  
+                    startMove(this,30)
+                }
+            }
+        }
+
+        /* 
+            多物体运动 
+            却只有一个定时器
+         */
+        // var timer = null;
+        function startMove(node,iTarget) {  
+            clearInterval(node.timer);
+            node.timer = setInterval(function () { 
+                var speed = (iTarget -node.alpha)/30;
+                speed = speed>0?Math.ceil(speed):Math.floor(speed);
+                if(iTarget == node.alpha){
+                    clearInterval(node.timer)
+                }else{
+                    node.alpha += speed;
+
+                    // 兼容设置alpha
+                    node.style.opacity = node.alpha/100;
+                    node.style.filter = `alpha(opacity=${node.alpha})` ;
+                }
+             },30)
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

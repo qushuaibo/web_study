@@ -1,0 +1,48 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-04 13:36:56
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-04 13:45:03
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            attributes 获取当前元素节点的所有的属性节点
+            返回：集合
+            集合
+                1、无序的
+                2、不重复的
+            获取其中一个属性节点
+         */
+        window.onload = function (){
+            var oDiv = document.getElementById("div1");
+            // alert(oDiv.attributes);
+
+            // 获取其中某一个属性节点
+            // title="hello"
+            // alert(oDiv.attributes.getNamedItem("title").nodeName);;
+            // alert(oDiv.attributes.getNamedItem("title").nodeType);;
+            // alert(oDiv.attributes.getNamedItem("title").nodeValue);;
+
+            // 简化版本
+            alert(oDiv.attributes["title"].nodeName);
+            alert(oDiv.attributes["title"].nodeType);
+            alert(oDiv.attributes["title"].nodeValue);
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="div1" title="hello" class="box">div文本</div>
+    
+</body>
+</html>

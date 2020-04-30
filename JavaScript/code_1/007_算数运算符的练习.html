@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /* 
+            1、入职薪水10k，每年涨薪水5%，50年后的工资多少
+
+        */
+
+        var money = 10000;
+        // money = money+money*0.05*50;
+        money+=money*0.05*50;
+        // alert(money);
+
+        /*
+            2、为抵抗洪水，战士连续作战89小时，变程计算共多少天
+        */
+       var total = 89;
+       var day = parseInt(total/24); // 取整
+    //    alert("一共花了"+day);
+       /*
+            摄氏度=5/9.8*（华氏度-32）
+       */
+      var Fahrenhite =80;
+      var centigrade = (Fahrenhite-32)/5*9.0;
+    //   alert("摄氏度"+centigrade+"°");
+
+    /*
+        给定一个三位数，分别把这个数字的百位，十位，个位计算出来并显示
+    */
+        var num =123;
+        var a = num%10;
+        var b = parseInt(num/10)%10;
+        var c = parseInt(num/100);
+
+        alert("百位是:"+c+",十位是："+b+",个位:"+a);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

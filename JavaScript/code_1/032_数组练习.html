@@ -1,0 +1,83 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-31 10:44:36
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-31 11:09:44
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            随机给出一个五位以内的数，然后输出该数共有多少位，每位是什么
+            12345
+         */
+        function countOfNumber(num){
+            // 声明一个数组，存放取下来的数
+            var arr = [];
+            while(num){
+                arr.push(num %10);
+                num = (parseInt(num/10));
+            }
+            arr.reverse();
+            document.write("一共是"+arr.length+"位"+",每一位是"+arr.join("/"));
+        }
+
+        countOfNumber(12345);
+        document.write("<br>");
+
+        /* 
+            编写函数has(arr,60)判断数组中是否存在60这个元素，返回布尔值
+         */
+        function has(arr,item) { 
+            for(var i=0;i<arr.length;i++){
+                if(arr[i] == item){
+                    return true;
+                }
+            }
+            return false;
+         }
+         
+         /* 
+            生成13位条形码
+            第十三位是计算出来的
+         */
+        function ean13(num) {
+            // 取下来每一位数
+            var arr = [];
+            while(num){
+                arr.unshift(num %10);
+                num = parseInt(num/10);
+            }
+            var odd = 0;
+            var even = 0;
+            for(var i=0;i<arr.length;i++){
+                if(i%2==0){
+                    // 基数位
+                    odd += arr[i];
+                }
+                if(i%2 != 0){
+                    even += arr[i]
+                }
+            }
+            var sum = (odd+even *3) %10;
+            if(sum){
+                sum = sum-10;
+            }
+            // 生成第13位
+            arr.push(sum);
+            return arr.join("")
+        }
+        document.write(ean13(949320394032));
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

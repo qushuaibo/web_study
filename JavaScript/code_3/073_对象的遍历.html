@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-10 12:59:03
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-10 13:17:36
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数据
+                for
+                for..in
+                forEach
+         */
+        /////////数组的遍历///////////////
+        var arr = [1,2,3];
+        console.time("for");
+        for(var i=0;i<arr.length;i++){
+            document.write("for,"+i+","+arr[i]+"<br>")
+        }
+        console.timeEnd("for")
+        console.time("forin")
+        for(var i in arr){
+            document.write("forin,"+i+","+arr[i]+"<br>")
+        }
+        console.timeEnd("forin")
+        console.time("foreach")
+        arr.forEach(function(item,index,arr){
+            document.write("forEach,"+i+","+arr[i]+"<br>")
+        })
+        console.timeEnd("foreach")
+        //////////对象的遍历///////////////
+        var person = {
+            username : "钢铁侠",
+            age : 18,
+            sex : "男"
+        };
+        for(var i in person){
+            // i是当前遍历的属性
+            document.write("对象遍历"+i+","+person[i]+"<br/>");
+        }
+
+            
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

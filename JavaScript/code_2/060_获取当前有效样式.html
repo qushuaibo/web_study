@@ -1,0 +1,57 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-03 17:47:57
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-04 00:24:11
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{background-color: blue;}
+        .box{height: 300px;}
+    </style>
+    <script>
+            window.onload = function(){
+                /* 
+                    通过.style.xxx的方式只能访问内联的css样式
+                */
+                var oDiv = document.getElementById("div1");
+                // alert(oDiv.style.width);
+                // alert(oDiv.style.backgroundColor);
+                // alert(oDiv.style.height);
+
+                /* 
+                    获取当前有效样式
+                    系统提供了两个方法：(不同浏览器使用的)
+
+                 */
+                // alert(oDiv.currentStyle["height"]);  // IE兼容的
+                // alert(getComputedStyle(oDiv)["height"]); // 火狐 谷歌
+                alert(getStyle(oDiv,"height"));
+                var oBtn = document.getElementById('btn1');
+                oBtn.onclick = function(){
+                    oDiv.style.backgroundColor = "orange";
+                    oDiv.style.height = "500px";
+                }
+            }
+
+            // 跨浏览器的兼容
+            function getStyle(node,cssStyle){
+                // 三目运算符
+                return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+            }
+           
+    </script>
+</head>
+<body>
+    <div id="div1" style="width: 200px;background-color: red;"class="box"></div>
+
+    <button id='btn1'>修改样式</button>
+    
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-29 23:16:15
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-30 12:59:35
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 
+              栈结构：
+                  栈：木盆
+                  最先放的在最底下，先进后出
+              数组的两个方法形成栈
+                  push
+                      格式：数组.push(参数)
+                      功能：在数组的末尾添加元素
+                      返回值：天津完以后数据的长度
+                  pop
+                      格式：数组.pop()
+                      参数：无
+                      返回值：取下一个元素
+                      功能：从末尾取下一个元素 
+        */
+      var arr = ["北京", "上海"];
+      arr.push("深圳", "天津");
+      var res = arr.push("新疆");
+      document.write(arr);
+      document.write("<br>");
+      document.write(res);
+      document.write("<br>");
+      arr.pop("新疆");
+      /*
+        队列结构：
+            结构：从末尾进，头部出
+            特点: 先进先出
+                push
+
+                shift()
+                    格式 数组.shift
+                    功能：从数组的头部取下一个元素
+                    返回值：取下元素
+                unshift()
+                    格式：数组.unshift
+                    功能：忘数组的头部插入元素
+                    返回值：插完以后数据的长度
+        */
+       var arr = ["唐朝","元朝"]
+      var res = arr.shift("唐朝")
+       arr.shift(res);
+      document.write(res);
+      document.write("<br>");
+       var res2 = arr.unshift("张伟");
+       document.write(res2);
+      document.write("<br>");
+      document.write(arr);
+      document.write("<br>");
+
+      /* 
+        cancat()
+        1、拷贝数组，生成新的数组
+        2、合并数组
+            格式：数组.concat(数组，数据)
+            返回值：合并的新数组
+            拆开元素再合并
+       */
+      var arr1 = [10,20];
+      var arr2 = [30,40];
+      var new_arr = arr1.concat(arr2,'hello world',true);
+      document.write(new_arr);
+      document.write("<br>");
+      document.write(new_arr.length);
+      document.write("<br>");
+      /* 
+        slice()
+            格式：数组.slice(start,end);
+            功能：可以基于当前元素数组获取指定区域的元素[start,end),提取
+                生成新元素
+            返回值：新数组
+            注：原数组不会发生变化
+       */
+      var arr = [1,2,3];
+      var new_arr = arr.slice(0,2);
+      document.write(new_arr);
+      document.write("<br>");
+      /* 
+        splice()
+            格式：数组.splice(start,length,数据)
+            参数：
+                start：开始截取的位置
+                length：截取元素的个数
+                第三个参数开始：再start位置插入的元素
+            返回值：截取下来元素组成的数据
+       */
+      var arr = [1,2,3,4]
+      var res = arr.splice(2,0,"hello","world")  //插入
+      document.write(arr);
+      document.write("<br>");
+      var res2 = arr.splice(1,2)                 //删除
+      document.write(res2);
+      document.write("<br>");
+      arr.splice(2,1,"new");                    // 修改
+      document.write(arr);
+      document.write("<br>");
+      /* 
+        join()
+            格式：数组.join(字符串)
+            功能：将数组中的元素，用传入的拼接符，拼接成一个字符串
+            返回值：拼接完的数组
+       */
+      var arr = ['1','2','3'];
+      document.write(arr);
+      document.write("<br>");
+      var res = arr.join("=");
+      document.write(res);
+      document.write("<br>");
+      /* 
+        reverse 逆序
+       */
+      var arr = ["d","df","r"];
+      arr.reverse();
+      document.write(arr);
+      document.write("<br>");
+      /* 
+        数组排序
+            sort
+            数组.sort
+            默认从小到大按字符串排序
+            参数：一个函数排序
+            
+       */
+      var arr = [1,3,2,4,1,13];
+      arr.sort();
+      document.write(arr);
+      document.write("<br>");
+      arr.sort(function(value1,value2){
+          return value1 > value2;
+      });
+      document.write(arr);
+      document.write("<br>");
+      
+
+
+
+      
+
+
+
+
+    </script>
+  </head>
+
+  <body></body>
+</html>

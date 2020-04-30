@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-29 12:55:03
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-29 14:02:52
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script src="../js/jquery-3.5.0.js"></script>
+     <script>
+         $(function () { 
+             /* 
+                innerHTML
+
+                value
+              */
+            alert($("#div1").html());
+
+            $("#div1").html("<h1>我是新赋值的内容</h2>")
+
+            // 取值和赋值一体化
+            alert($("input").val());
+
+            $("input").val("world hello")
+          })
+     </script>
+ </head>
+ <body>
+    <div id="div1">
+        <em>em</em>
+        div文本
+    </div>     
+    <input type="text" name="" id="" value="helloworld">
+ </body>
+ </html>

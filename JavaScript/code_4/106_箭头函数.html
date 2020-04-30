@@ -1,0 +1,65 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-23 21:51:16
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-23 22:15:24
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            箭头函数
+            除了写法有新意与以前的一样
+            适当的省略function 和 return关键字
+         */
+        //  function add() {
+        //      return x+10;
+        //    }
+
+        var add = x => x+10;
+        // alert(add(5));
+        
+        /* 
+            各种形式的箭头函数
+         */
+/*          // 无参数 无返回值
+         var show = () =>{alert("hello")};
+         // 有一个参数无返回值
+         var xxx = num =>{alert(num)};
+         // 有一个参数有返回值
+         var add = x => {x+10};
+
+         // 多个返回值
+         var add = (x,y) =>{x+y}; */
+
+         var arr = [10,20,30,40];
+        //  var newArr = arr.filter(function (item) {return item>20});
+        //// 匿名函数的写成箭头函数
+        // var newArr = arr.filter(item=>item>20);
+        var newArr = arr.map(item => item*20);
+         alert(newArr);
+        
+            /* 
+             箭头函数需要注意的部分 
+             1、箭头函数不能用new
+             2、箭头函数如果返回值是对象 一定要加()
+             3、箭头函数的this，指向上一层函数的主人
+             */
+            function show() {
+                return{
+                    username:"xxx"
+                }
+              }
+            var show = () =>({username:"xxx"})
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

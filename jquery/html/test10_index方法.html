@@ -1,0 +1,51 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-29 20:00:18
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-30 16:33:49
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        $(function () {
+            /* 
+                Index() 获取当前节点在兄弟节点的下标
+
+                eq(下标) 通过下标获取指定元素的元素节点
+             */
+            // alert($("h3").index());
+            $('li').eq(3).css("backgroundColor","orange");
+            $('li:eq(4)').css("backgroundColor","orange");
+            alert($("div").find("em").index());
+        })
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+        <li>1111</li>
+    </ul>
+    <strong>strong</strong>
+    <em>em</em>
+    <div id="div1">
+        <h2>h2</h2>
+        <p>p</p>
+        <h3>h3</h3>
+        <em>em</em>
+        <div>div</div>
+    </div>
+</body>
+
+</html>

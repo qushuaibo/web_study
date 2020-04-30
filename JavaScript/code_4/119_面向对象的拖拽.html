@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+        }
+    </style>
+    <script src="./drag.js"></script>
+    <script src="./drag.js"></script>
+    <script src="./limitDrag.js"></script>
+    <script>
+        window.onload = function () {
+            new Drag("div1");
+            new limitDrag("div2");
+        }
+    </script>
+</head>
+
+<body>
+    <dov id="div1"></dov>
+    <dov id="div2"></dov>
+</body>
+
+</html>

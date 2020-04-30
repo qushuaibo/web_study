@@ -1,0 +1,79 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-23 22:17:26
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-23 22:56:36
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+                中括号解构 
+                大括号解构
+         */
+        // 中括号解构 
+        //  var x=10,y=20,z=30;
+        var [x,y,z] = [10,20,30];
+        // alert(x+','+y);
+        var [x,[a,b],y] = [10,[20,30],40];
+        // b 是undefined
+        var [x,[a,b],y] = [10,[20],40];
+        
+        // 大括号解构
+        var {name,age,sex} = {
+            age:18,
+            name:"钢铁侠",
+            sex:"男"
+        }
+        /* 
+            使用解构的好处
+                1、交换两个数
+                2、函数可以返回多个值
+                3、函数定义参数和传入参数
+                4、参数可以附带默认值
+                5、快速取出数组中的某一个元素
+         */
+         var [x,y] = [10,20];
+        //  alert(x+","+y);
+         // 交互两个数的位置
+         [x,y] = [y,x];
+        //  alert(x+","+y);
+
+        function show() {  
+            return ["结果1","结果2","结果三"];
+        }
+
+        var [a,b,c] = show();
+        // alert(a+b);
+
+        function showSelf(name,age,sex) {  
+            alert("我叫"+name+",今年"+age+",是一位"+sex+"性");
+        }
+        // showSelf("小明",18,"男");
+        // 解构的方法声明函数
+        // 4、参数可以附带默认值
+        function showSelf({name,age,sex="男"}) {  
+            alert("我叫"+name+",今年"+age+",是一位"+sex+"性");
+        }
+        showSelf({
+            age:19,
+            name:"琚帅波",
+        })
+
+
+                // 5、快速取出数组中的某一个元素
+                var arr = [10,20,30];
+                var {0:first,2:last} = arr;
+                alert(first);
+                alert(last);
+
+    </script>
+</head>
+<body>
+    
+</body>

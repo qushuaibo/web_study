@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>定义样式表</title>
+        <meta charset='utf-8'>
+        <style type='text/css'>
+           /* p {color:red; font-size:31px;} */    
+           /* p {color:red; font-size:31px;} 
+           .p {color:blue; font-size:30px;}
+           .p p {color:red;}
+           #ppp {color:blue} */
+         /*  #pp {color:red}
+           h1,h2,h3,h4 {color:red}  */
+
+           /*伪类选择器*/
+           a:link{color:red;}
+           a:hover{color:green}
+           a:active{color:yellow}
+           a:vivited{color:blue}
+
+        </style>
+    </head>
+
+    <body>
+        <!--class定义-->
+        <!--要用双引号class否则不能正常显示-->
+        <!--css中的注释是/* */-->
+        <!--class是可以重复使用的-->
+        <!--.p p可以定义class中嵌套的p-->
+        <p class="p">麦子学院</p>
+        <p>麦子学院</p>
+        <div class="p">
+            <p>麦子学院</p>
+        </div>
+
+        <!--id定义-->
+        <div id="pp" class="p">
+            <p>id方式</p>
+        </div>
+        <!--优先级问题id>class>html-->
+        <!--如果指定了两次会显示后面的-->
+
+
+        <!-- 组合控制-->
+        <!--任何标签都可以组合控制-->
+        <div>
+            <h1>麦子学院</h1>
+            <h2>麦子学院</h2>
+            <h3>麦子学院</h3>
+            <h4>麦子学院</h4>
+        </div>
+
+        <!--伪类选择器-->
+        <a href="http://www.baidu.com" target="_blank">百度</a>
+        <a href="http://www.qq.com" target="_blank">百度2</a>
+
+
+    </body>
+</html>

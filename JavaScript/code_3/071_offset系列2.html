@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-10 12:30:47
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-10 12:42:27
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0px;padding: 0px;}
+        /* relative相等位置 */
+        #div1{margin: 30px;width: 200px;height: 200px;background-color: orange;position: relative;}
+        #div2{margin: 20px;width: 100px;height: 100px;background-color: red;}
+    </style>
+    <script>
+        function getStyle(node,cssStyle)
+        {
+            return node.currentStyle?node.currentStyle[cssStyle]:getComputedStyle(node)[cssStyle];
+        }
+        window.onload = function()
+        {
+            var oDiv2 = document.getElementById("div2");
+            alert(getStyle(oDiv2,"left")); // auto无法计算
+            var offsetleft = oDiv2.offsetLeft; // 计算能看的第一个有定位的距离
+            alert(offsetleft);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+    
+</body>
+</html>

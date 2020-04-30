@@ -1,0 +1,110 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-31 21:58:27
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-31 22:33:24
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // substring,substr,slice
+      //--------------------------------------------------------//
+       /*
+            substring
+                格式：字符串.substring(start,end)
+                功能：将字符串中[start,end)部分提取出来，生成一个新的字符串
+                返回值：生成的新的字符串
+       */ 
+      var str1 = "hello";
+      var newStr = str1.substring(1,4);
+      document.write(newStr);
+      document.write("<br>");
+      //--------------------------------------------------------//
+      /* 
+            substr
+                格式：字符串.substr(start,length);
+                返回值：生成的字符串
+       */
+      var str1 = "hello";
+      var newStr = str1.substr(1,3);
+      document.write(newStr);
+      document.write("<br>");
+      //--------------------------------------------------------//
+      /* 
+        slice(数组的)(切片)
+            格式：字符串.slice(start,end);
+       */
+      var str1 = "hello";
+      var newStr = str1.slice(1,4);
+      document.write(newStr);
+      document.write("<br>");
+      //--------------------------------------------------------//
+        /* 
+            replace()
+                格式：supStr.replace(oldStr,newStr)
+                功能：替换
+                参数：
+                    第一个参数传入的是字符串，只能替换一次
+                    第一个参数：正则
+                        /xxx/ig   i忽略大小写 g全局
+         */
+        var str = "how Are are you";
+        newStr = str.replace(/are/ig,'old are');
+        document.write(str);
+        document.write("<br>");
+        document.write(newStr);
+        document.write("<br>");
+      //--------------------------------------------------------//
+      /* 
+            split() 分割字符串
+                格式：字符串.split(分隔符,length)
+                参数：
+                    第一个参数：用这个分隔符来对字符串进行分割
+                    第二个参数：控制返回的数组的元素的格式，一般不用
+                功能：用分隔符对原字符串进行分割，并用数组返回
+                返回值：数组
+                注意：
+                    1 相邻的两个字符会产生空字符
+                    2 分隔符是空字符串时，会直接将每一个字符，直接分割
+       */
+        var str = "how  are you";
+        var arr = str.split(" ");
+        document.write(arr);  //how,,are,you
+        document.write("<br>");
+        var str = "how  are you";
+        var arr = str.split("");
+        document.write(arr);  //h,o,w,,a,r,e,y,o,u
+        document.write("<br>");
+      //--------------------------------------------------------//
+      /* 
+           toLowerCase() 
+           toUpperCase()
+       */
+        var str = 'aBc';
+        var l_c = str.toLowerCase();
+        document.write(l_c);  
+        document.write("<br>");
+        var u_c = str.toUpperCase();
+        document.write(u_c);
+        document.write("<br>");
+      //--------------------------------------------------------//
+      /* 
+            cancat :字符串拼接
+            + : 拼接
+       */
+        var str1 = 'hello';
+        var res = str1.concat(' world');
+        document.write(res);
+        document.write("<br>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

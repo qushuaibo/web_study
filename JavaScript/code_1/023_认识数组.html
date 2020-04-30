@@ -1,0 +1,65 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-29 21:52:14
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-29 22:59:38
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数组：用一个变量存储一堆数据的数据结构
+
+            数据类型：
+                基本数据类型
+                特殊数据类型
+                复合/引用数据类型:
+                    数组
+         */
+        /* 
+            数组的声明：
+                1、通过new创建数组
+                    参数：传入任何数据
+                2、省略new运算符创建数组
+                    当只传入一个数组的时候代表创建这么长的数组
+
+                3、数据常量进行赋值
+         */
+        var arr = new Array('nn',2);
+        document.write(arr);
+
+        var arr2 = Array('n',3);
+        document.write(arr2);
+
+        var arr3 = Array(10);
+        document.write(arr3);
+
+        var arr4 = [10];
+        document.write(arr4);
+        /* 
+            数组的属性
+                数组.length 返回数组元素的个数
+                
+                访问数据的元素
+                    数组[]
+         */
+        var arr6 = [1,2,3];
+        document.write('<hr>');
+        document.write(arr6[0]);
+        alert(arr6.length);
+        for (var i=0;i<arr6.length;i++){
+            document.write('<hr>');
+            document.write(arr6[i]);
+        }
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

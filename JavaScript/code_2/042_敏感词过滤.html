@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-01 16:59:54
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-01 17:15:18
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #msg{width:200px;height: 200px;border: 1px solid blue}
+    </style>
+    <script>
+        /* 
+            敏感词过滤
+            所有的表单元素：用过.value来获取属性
+            双标签：innerHtmml
+            要求：
+                敏感词替换位* (正则)
+         */
+        var arr = [/靠/ig,/tmd/ig,/nm/ig];
+        function btnClick() {
+            var oTxt = document.getElementById("txt1");
+            var oMsg = document.getElementById("msg")
+            
+            var oValue = oTxt.value;
+            for(var i=0;i<arr.length;i++){
+                oValue = oValue.replace(arr[i],"*");
+            }
+            oMsg.innerHTML = oValue;
+            oTxt.innerHTML = "";
+          }
+
+    </script>
+</head>
+<body>
+    <textarea name="" id="txt1" cols="30" rows = "10"></textarea>
+    <button onclick="btnClick()">发布</button>
+    <div id="msg"></div>
+    
+</body>
+</html>

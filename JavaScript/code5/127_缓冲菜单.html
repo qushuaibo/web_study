@@ -1,0 +1,112 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-27 23:47:04
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-28 00:40:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            height: 3000px;
+        }
+
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            right: 0px;
+        }
+    </style>
+    <script>
+        /*
+             1、匀速运动
+                 每次启动定时器 关闭上一次的定时器
+                 if else 将运动和停止分开
+             2、分享到菜单  淡入 和 淡出
+                 startMove(iTarget)
+             3、缓冲运动
+                 var speed = (iTarget - iCur) /8
+                 speed = speed>0?Math.ceil(speed):Math.floor(speed)
+  
+             缓冲菜单
+           */
+        window.onload = function () {
+            var oDiv = document.getElementById("div1");
+            // 获取居中的top值
+            var scrollTop =
+                document.documentElement.scrollTop || document.body.scrollTop;
+            var windowHeight =
+                document.documentElement.clientHeight || document.body.clientHeight;
+
+            // 初2 出现小数 直接取整
+            var iH = parseInt(scrollTop + (windowHeight - oDiv.offsetHeight) / 2);
+
+            startMove(iH);
+            // 滚动窗口
+            window.onscroll = function () {
+                // 获取居中的top值
+                var scrollTop =
+                    document.documentElement.scrollTop || document.body.scrollTop;
+                var windowHeight =
+                    document.documentElement.clientHeight || document.body.clientHeight;
+
+                // 初2 出现小数 直接取整
+                var iH = parseInt(scrollTop + (windowHeight - oDiv.offsetHeight) / 2);
+
+                startMove(iH);
+            };
+            // 窗口大小发生变化
+            window.onresize = function () {
+                // 获取居中的top值
+                var scrollTop =
+                    document.documentElement.scrollTop || document.body.scrollTop;
+                var windowHeight =
+                    document.documentElement.clientHeight || document.body.clientHeight;
+
+                // 初2 出现小数 直接取整
+                var iH = parseInt(scrollTop + (windowHeight - oDiv.offsetHeight) / 2);
+
+                startMove(iH);
+            }
+
+        };
+
+        // ---------------  -------------------------------
+        var timer = null;
+        function startMove(iTarget) {
+            var oDiv = document.getElementById("div1");
+            clearInterval(timer);
+            timer = setInterval(function () {
+                // 计算速度
+                var speed = (iTarget - oDiv.offsetTop) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if (oDiv.offsetTop == iTarget) {
+                    clearInterval(timer);
+                } else {
+                    oDiv.style.top = oDiv.offsetTop + speed + "px";
+                    document.title = oDiv.offsetTop + "," + iTarget;
+                }
+            }, 30);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+</body>
+
+</html>

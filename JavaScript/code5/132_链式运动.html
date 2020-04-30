@@ -1,0 +1,91 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-28 09:43:25
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-28 13:06:38
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 50px;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+    </style>
+    <script src="../tool/tool_1.js"></script>
+    <script>
+        window.onload = function () {
+            var aDivs = document.getElementsByTagName("div");
+            aDivs[0].onmouseover = function () {
+                /* 
+                    链式运动在第一个动画就是以后执行第二个动画
+                 */
+                // 宽变成300
+                startMove(this, "width", 300, function () {  
+                    startMove(this,"height",300,function () {  
+                        startMove(this,"opacity",100)
+                    })
+                })
+            }
+            //  直接传入函数 使用匿名函数
+            // function show() {
+            //     alert(this);
+            // }
+        }
+        function startMove(node, attr, iTarget, complete) {
+            clearInterval(node.timer);
+            node.timer = setInterval(function () {
+                var iCur = null;
+                if (attr == "opacity") {
+                    iCur = parseInt(parseFloat(getStyle(node, "opacity")) * 100);
+                } else {
+                    iCur = parseInt(getStyle(node, attr));
+                }
+                var speed = (iTarget - iCur) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if (iCur == iTarget) {
+                    clearInterval(node.timer);
+                    if (complete) {
+                        // 将this执行node
+                        complete.call(node);
+                    }
+                    // alert('运动结束');
+                    /* 
+                        必须不能写死
+                         封装函数 形参是根据函数中不确定的值来写的
+                         将代码当初形参
+                         可以将一段代码的编写权力交给别人
+
+                         将函数当作参数 叫做回调函数
+                     */
+                } else {
+                    if (attr == "opacity") {
+                        iCur += speed;
+                        node.style.opacity = iCur / 100;
+                        node.style.filter = `alpha(opacity=${iCur})`
+                    } else {
+                        node.style[attr] = iCur + speed + "px";
+                    }
+                }
+            }, 30)
+        }
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

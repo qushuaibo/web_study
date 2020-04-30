@@ -1,0 +1,55 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-29 12:39:16
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-29 12:53:24
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        $(function () {
+            // $("h1").click(function () { 
+            //     alert('单击');
+            //  })
+
+            //  $("h1").css("backgroundColor","orange");
+
+            //  $("h1").mouseover(function () { 
+            //     this.style.backgroundColor = "red"
+            //   })
+
+            //  $("h1").mouseout(function () { 
+            //     this.style.backgroundColor = "blue"
+            //   })
+
+
+            // 通过链式操作简化代码
+            $("h1").click(function () {
+                alert('单击');
+            })
+                .css("backgroundColor", "orange")
+                .mouseover(function () {
+                    this.style.backgroundColor = "red"
+                })
+                .mouseout(function () {
+                    this.style.backgroundColor = "blue"
+                })
+        })
+
+
+    </script>
+</head>
+
+<body>
+    <h1>hello world</h1>
+</body>
+
+</html>

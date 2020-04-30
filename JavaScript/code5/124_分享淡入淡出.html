@@ -1,0 +1,86 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-26 22:07:15
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-28 01:31:38
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 200px;
+            background-color: rgb(184, 127, 127);
+            position: absolute;
+            left: -100px;
+            top: 200px;
+        }
+
+        #div1 span {
+            width: 20px;
+            height: 60px;
+            background-color: orange;
+            position: absolute;
+            left: 100px;
+            top: 70px;
+            line-height: 20px;
+        }
+    </style>
+    <script>
+        /* 
+            当鼠标移入的时候
+                left 从 -100 => 0
+            当鼠标移出的时候
+                left 从 0 => -100
+         */
+        window.onload = function () {
+            var oDiv = document.getElementById("div1");
+            var aSpan = oDiv.getElementsByTagName("span")[0];
+            var oDivx = document.getElementById("divx")
+            oDivx.onmouseover = function () {
+                startMove(0);
+            }
+            oDivx.onmouseout = function () {
+                startMove(-100);
+            }
+        }
+        var timer = null;
+        function startMove(iTarget) {
+            var oDiv = document.getElementById("div1");
+            var speed = 5;
+            if (oDiv.offsetLeft > iTarget) {
+                speed = -Math.abs(speed);
+            } else {
+                speed = Math.abs(speed);
+            }
+            clearInterval(timer);
+            timer = setInterval(function () {
+                // 运动和停止分开
+                if (oDiv.offsetLeft == iTarget) {
+                    clearInterval(timer);
+                } else {
+                    oDiv.style.left = oDiv.offsetLeft + speed + "px";
+                }
+            }, 30)
+        }
+    </script>
+</head>
+
+<body>
+    <div id="divx">
+        <div id="div1">
+            <a href="">QQ</a><br>
+            <a href="">微信</a>
+            <span>分享到</span>
+        </div>
+    </div>
+</body>
+
+</html>

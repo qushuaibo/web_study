@@ -1,0 +1,127 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-03 03:25:03
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-03 03:48:49
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 100px;
+        height: 150px;
+        padding: 50px;
+        background-color: orange;
+        border: 1px solid black;
+        margin-top: 8%;
+        margin-left: 40%;
+      }
+      #div1 span {
+        font-size: 20px;
+        position: relative;
+        left: 5%;
+      }
+      #div1 button {
+        width: 50px;
+        height: 40px;
+
+        font-size: 15px;
+        position: relative;
+        margin-top: 10px;
+        height: 25%;
+        left: 20%;
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <script>
+        // 通过id获取标签节点简化
+        function $(id) {
+            return document.getElementById(id)
+        }
+        var i =0; // 当前秒表的总秒数
+        var timer = null; // 全局变量一般设置为null
+        var isRunning =false;   // 代表秒表是没有运行的
+        // 写法二  多用写法二
+      window.onload = function() 
+      {
+          // 开始
+          function startFunc()
+          {
+              timer = setInterval(function () 
+              {
+                  i++
+                  $("sec").innerHTML = doubleNum(i%60);
+                  $("min").innerHTML = doubleNum(parseInt(i/60)%60);
+                  $("hour").innerHTML =doubleNum(parseInt(i/3600));
+                  
+              },10);
+          }
+        // 暂停
+        function pauseFunc()
+        {
+            clearInterval(timer);
+        }
+
+        // 给按钮添加点击事件
+        $("btn1").onclick = function () 
+        {
+            if(!isRunning){
+                $("btn1").innerHTML = "暂停";
+                isRunning =true;
+                startFunc();
+            }
+            else{
+                $("btn1").innerHTML = "开始";
+                isRunning = false;
+                pauseFunc();
+
+            }
+         }
+
+        // 复位
+        $("reset").onclick = function ()
+         {
+            clearInterval(timer);
+            i=0;
+            isRunning = false;
+            $("btn1").innerHTML = "开始";
+            $("sec").innerHTML = "00";
+            $("min").innerHTML ="00"; 
+            $("hour").innerHTML ="00";
+
+          }
+      };
+// ----------------------------------------------//
+      // 两位数显示
+      function doubleNum(n) {
+          if(n<10){
+              return "0"+n;
+          }
+          else{
+              return n;
+          }
+        }
+    </script>
+  </head>
+  <body>
+    <div id="div1">
+      <span id="hour">00</span>
+      <span>:</span>
+      <span id="min">00</span>
+      <span>:</span>
+      <span id="sec">00</span>
+      <br />
+      <button id="btn1">开始</button>
+      <button id="reset">复位</button>
+    </div>
+    <div class="div2">
+        
+    </div>
+  </body>
+</html>

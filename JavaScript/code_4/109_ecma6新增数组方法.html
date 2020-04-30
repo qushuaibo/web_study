@@ -1,0 +1,65 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-23 23:04:00
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-23 23:15:53
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            Array.from()  将一个伪数组转换为数组
+         */
+         window.onload = function () {  
+             var aLis = document.getElementsByTagName("li");
+            //  alert(aLis.length);
+             // 
+             aLis = Array.from(aLis);
+            //  alert(aLis.push("hello"));
+            //  alert(aLis);
+
+         }
+         /* 
+            find()
+                功能：找到符合条件的元素(短路操作)
+                返回值：找到的元素
+            findIndex()
+                返回值：找到元素的下标
+
+
+          */
+
+         var arr = [10,20,30,40,50];
+        //  var res = arr.find(function (item,index,arr) {  
+        //      return item >20;
+        //  })
+        //  alert(res);
+        
+         var res = arr.find(item=>item>20);
+          alert(res);
+         var res = arr.findIndex(item=>item>20);
+          alert(res);
+       /* 
+            array.copyWithin
+                第一个参数：从那个下标开始
+                第二次参数和第三个参数 范围 [start,end)
+        */ 
+        var arr = [1,2,3,4,5,6,7,8,9];
+        arr.copyWithin(3,7,9);
+        alert(arr);
+    </script>
+</head>
+<body>
+   <ul>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+   </ul> 
+</body>
+</html>

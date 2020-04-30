@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-11 12:59:45
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-11 13:21:20
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: gray;
+        line-height: 100px;
+        text-align: center;
+        margin: 20px;
+        position: relative;
+      }
+      div span {
+        width: 100px;
+        height: 100px;
+        background-color: white;
+        display: inline-block;
+        margin-top: 40px;
+      }
+    </style>
+    <script>
+        window.onload = function()
+        {
+            var aDivs = document.getElementsByTagName("div");
+            var i = 0;
+            // mouseover 会触发子节点 
+            aDivs[i].onmouseover = function () 
+             {
+                 var oSpan = this.getElementsByTagName("span")[0];
+                 oSpan.innerHTML = i++;
+               }
+            var j = 0;
+            aDivs[1].onmouseenter = function ()
+             {
+                 var oSpan = this.getElementsByTagName("span")[0];
+                 oSpan.innerHTML = j++;
+               }
+            
+        }
+    </script>
+  </head>
+  <body>
+    <div>
+      <span>mouseover</span>
+    </div>
+    <div>
+        <span>mouseleave</span>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-02 23:32:24
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-19 18:55:09
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            日期对象
+            1、默认获取当p前系统的时间
+            Thu Apr 02 2020 23:33:46 GMT+0800 (中国标准时间)
+            GMT 格林尼治时间 英国有个小镇 
+            2、传入参数
+                "2020-01-01"
+                "2020/02/02"
+                按顺序 分别传入 年月日 时分秒 毫秒
+                直接传入毫秒数
+                1秒= 1000毫秒
+         */
+        // var d = new Date();
+        // var d = new Date("2020-02-02");
+        // var d = new Date("2020/1/1");
+        var d = new Date(2020,0,1,8,30,50);  /// 0月是1月 从0开始
+        // var d = new Date(1000);
+        document.write(d);
+        document.write("<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

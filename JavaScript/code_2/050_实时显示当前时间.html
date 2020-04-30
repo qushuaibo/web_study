@@ -1,0 +1,31 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-03 01:16:53
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-03 01:25:25
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{width: 500px;height: 100px;text-align: center;
+        line-height: 100px;margin: 100px auto;border:1px solid;
+        font-size: 30px;}
+    </style>
+    <script src="../tool/tool_1.js"></script>
+    <script>
+        setInterval(function () {
+            var oDiv = document.getElementById("div1");
+            oDiv.innerHTML = showTime();
+          },1000)
+    </script>
+
+</head>
+<body>
+   <div id="div1">ddf</div> 
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        var oDiv = null;
+        var offsetX = 0;
+        var offsetY = 0;
+        window.onload = function () {
+            oDiv = document.getElementById("div1");
+            oDiv.onmousedown = funcDown;
+            document.onmouseup = funcUp;
+        };
+        /*
+            改造
+                不能有函数嵌套
+                可以有全局变量
+
+            面向过程 =》 面向对象
+                1、window.onload = 构造函数
+                2、全局变量 =构造函数的属性
+                3、全局函数 = 构造函数的方法
+             */
+        function funcDown(ev) {
+            var e = ev || window.event;
+            // 可以直接得到鼠标和节点的相对位置
+            // alert(e.offsetX+","+e.offsetY);
+            offsetX = e.clientX - oDiv.offsetLeft;
+            offsetY = e.clientY - oDiv.offsetTop;
+            document.onmousemove = funcMove
+        }
+        function funcMove(ev) {
+            document.onmousemove = function (ev) {
+                var e = ev || window.event;
+                oDiv.style.left = e.clientX - offsetX + "px";
+                oDiv.style.top = e.clientY - offsetX + "px";
+            };
+        }
+
+        function funcUp() {
+            document.onmousemove = null;
+        }
+    </script>
+</head>
+
+<body>
+    <dov id="div1"></dov>
+</body>
+
+</html>

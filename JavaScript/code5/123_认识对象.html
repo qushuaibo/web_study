@@ -1,0 +1,82 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-26 21:38:03
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-26 22:03:19
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 取消所有的marin和padding */
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0px;
+            top: 100px;
+        }
+    </style>
+    <script>
+        /*
+            运动与游戏开发
+           人眼 能够识别最小是18帧
+           让动画的切换间隔大于18帧
+           电影院 24帧
+         */
+        /*
+           让一个div从左到有运动
+            1、停不下来
+            2、当速度等于某个值停不下来
+            3、到达目的地点击还会继续运动
+                if else 将运动和停止分开
+            4、重复点击 速度会加快
+                保证只有一个定时器在启动
+                每此启动定时器之前，将上一个定时器关闭掉
+
+         */
+        /* 
+            运动框架
+                1、每次启动定时器都要将上次的定时器关闭掉
+                2、if else
+            
+         */
+        window.onload = function () {
+            var oBtn = document.getElementById("btn1");
+            var oDiv = document.getElementById("div1");
+            // 速度
+            var speed = 7;
+            var timer = null;
+            oBtn.onclick = function () {
+                clearInterval(timer);
+                timer = setInterval(function (param) {
+                    if (oDiv.offsetLeft >= 500) {
+                        clearInterval(timer);
+                    } else {
+                        oDiv.style.left = oDiv.offsetLeft + speed + "px"
+                    }
+                }, 30)
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <button id="btn1">开始运动</button>
+    <div id="div1"></div>
+</body>
+
+</html>

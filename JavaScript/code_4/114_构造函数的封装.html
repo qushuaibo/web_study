@@ -1,0 +1,110 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-24 12:09:44
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-24 16:45:00
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 
+            1、历史
+                面向过程  汇编语言 c语言
+                面向对象  c++ Java Javascript Python
+
+            2、思想
+                面向过程
+                面向对象
+            3、构造函数
+         */
+
+      /*       var p1 = new Object();
+      p1.name = "blue";
+      p1.sex = "男";
+      p1.showName = function () {
+        alert("我的名字" + this.name);
+      };
+      p1.showSex = function () {
+        alert("我的性别是" + sex + "性");
+      };
+      p1.showName();
+ */
+      //
+      function createPerson(name, sex) {
+        // 1空对象
+        var obj = new Object();
+        //2 加工
+        obj.name = name;
+        obj.sex = sex;
+        obj.showName = function () {
+          alert("我的名字" + this.name);
+        };
+        obj.showSex = function () {
+          alert("我的性别是" + sex + "性");
+        };
+        //3 出厂
+        return obj;
+      }
+      var p1 = createPerson("ble", "男");
+      p1.showName();
+
+      // 官方函数有new
+      // 每一个对象都有自己的函数
+
+      /* 
+            当某个函数可以使用new时
+                1、当前函数中的this指向所创建的新对象
+                2、自动完成原料和出厂操作
+            这种通过new调用函数 我们把它叫做构造函数 构造函数可以构造对象
+            构造函数首字母一般大写
+            
+            prototype
+                概念 每一个函数都有一个prototype
+            用在构造函数上，我们可以在函数的原型prototype上,
+            添加方法
+               1、如果我们将方法添加到构造函数的原型 prototype
+               2、构造函数构造处理的对象共享原型上的所有方法
+
+       */
+      function New_createPerson(name, sex) {
+        this.name = name;
+        this.sex = sex;
+      }
+      // Person构造函数的添加方法
+    New_createPerson.prototype.showName = function(){
+        alert("我的名字"+this.name);
+    }
+    New_createPerson.prototype.showSex =function () {
+        alert("我的性别"+this.sex);
+    }
+
+
+      var p2 = new New_createPerson("blooe", "男");
+      var p1 = new New_createPerson("b","男")
+      
+      console.log(p1.showName);
+      console.log(p2.showName);
+      console.log(p1.showName == p2.showName);
+
+      var arr1 = [10, 20, 30];
+      var arr2 = [1, 2, 3, 4];
+      Array.prototype.sum = function () {
+          var res = 0;
+        for (var i = 0; i < this.length; i++) {
+          res += this[i];
+        }
+        return res;
+      };
+
+    //   alert(arr1.sum());
+    //   alert(arr2.sum());
+    //   alert(arr1.sum ==arr2.sum);
+    </script>
+  </head>
+  <body></body>
+</html>

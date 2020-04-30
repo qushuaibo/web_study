@@ -1,0 +1,108 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-30 11:39:18
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-30 12:27:28
+ -->
+ <!-- 
+ (1) 子代操作符
+     >
+     div>div>p
+  -->
+<div>
+    <div>
+        <p></p>
+    </div>
+</div>
+<!-- 
+    兄弟操作符
+    +
+    div>div+p
+ -->
+ <div>
+     <div></div>
+     <p></p>
+ </div>
+ <!-- 
+     返回上级操作符
+     ^
+     div>div+p^div
+  -->
+  <div>
+      <div></div>
+      <p></p>
+  </div>
+  <div></div>
+  <!-- 
+      乘法操作符
+      *
+      ul>li*5
+   -->
+   <ul>
+       <li></li>
+       <li></li>
+       <li></li>
+       <li></li>
+   </ul>
+   <!-- 
+       分组操作符
+       ()
+       html>(head>title+meta+script)+body
+    -->
+<html>
+<head>
+    <title></title>
+    <meta >
+        <script></script>
+</head>
+<body>
+    
+</body>
+</html>
+<!-- 
+    属性操作符
+    ID和class
+    div#header>p.new*3
+ -->
+ <div id="header">
+     <p class="new"></p>
+     <p class="new"></p>
+     <p class="new"></p>
+ </div>
+ <!-- 
+     定制属性
+     []
+     a[target="" title="hello world"*3]
+  -->
+  <a href="" target="" title="hello world"></a>
+  <a href="" target="" title="hello world"></a>
+  <a href="" target="" title="hello world"></a>
+  <!-- 
+      数值操作符
+      $
+      div>ul>li.item_$*3
+      div>ul>li.item_$@4*2
+   -->
+   <div>
+       <ul>
+           <li class="item_1"></li>
+           <li class="item_2"></li>
+           <li class="item_3"></li>
+       </ul>
+   </div>
+   <div>
+       <ul>
+           <li class="item_4"></li>
+           <li class="item_5"></li>
+       </ul>
+   </div>
+<!--
+    文本操作符
+    {}
+    div>p{hello world!}
+
+ -->
+    <div class="news">
+        <p>hello world!</p>
+    </div>

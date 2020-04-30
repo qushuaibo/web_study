@@ -1,0 +1,54 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-29 22:59:58
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-29 23:14:07
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       /* 
+            3 创建随机数
+            Math.random()  随机0-1
+
+            Math.random()*10
+        */ 
+       document.write(parseInt(Math.random()*10));
+       
+       var arr = new Array(10);
+       for(var i=1;i<arr.length;i++){
+           arr[i] = parseInt(Math.random() * 10);
+       }
+       document.write("<hr>");
+       document.write(arr+"<br>");
+
+       /* 
+            数组的遍历
+            for 循环
+            for in 遍历 枚举
+        */
+       var arr = [10,20,30,40,50];
+       // 在页面上分别将每个数字输出
+       for(var i = 0;i < arr.length;i++){
+           document.write(arr[i]+"<br>");
+       }
+        /* 
+            for i 更快 
+         */
+       for(var i in arr){
+           document.write(arr[i]+"<br>");
+       }
+       
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

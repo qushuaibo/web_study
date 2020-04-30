@@ -1,0 +1,60 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-10 07:52:18
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-10 08:03:10
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            this概念：只要封装函数，任何一个函数系统都会封装一个叫做this的变量
+                this变量存储的地址 当前函数的主任的地址
+                [注]this需要通过上下问取判断
+         */
+        /* 
+            常用情况
+        */
+       var person = 
+       {
+           username:"钢铁侠",
+           sex:"男",
+           show:function()
+           {
+               alert(person.username)
+               alert(this.username);
+           }
+       }
+    //    person.show();
+    //    this.show();
+      // 没有主人的情况下默认是window 
+       function show() 
+       { 
+           alert(this);
+        }
+        // show();
+        // window.show();
+        
+        window.onload = function () 
+        { 
+            var oBtn = document.getElementById("btn1");
+            oBtn.onclick = function ()
+             {
+                 alert(this);
+               }
+
+         }
+
+    
+    </script>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+    
+</body>
+</html>

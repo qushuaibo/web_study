@@ -1,0 +1,45 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-29 20:09:17
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-30 10:35:11
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            ctrl+shift+e 打开资源管理器
+            ctrl+shift+x 打开扩展
+         */
+        $(function(){
+            // alert($("#div1").attr("id"));
+            // alert($("#div1").attr("title"));
+            // alert($("#div1").attr("class"));
+
+            // 这只属性
+            $("#div1").attr("title","world");
+            alert($("#div1").attr("title"));
+
+            // 一次性修改多个值
+            $("#div1").attr({
+                title:"title_a",
+                class:"class_b",
+                yyy:"zzz"
+
+            })
+            
+
+        })
+    </script>
+</head>
+<body>
+    <div id="div1" title="hello" class="box"></div>
+</body>
+</html>

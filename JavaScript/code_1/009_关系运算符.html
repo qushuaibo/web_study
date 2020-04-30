@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      /* 赋值运算符 =
+        关系运算符：
+         <> <= >= ==  === 恒等于 !== 
+         【注】
+            值，绝对是布尔值
+        自动数据类型转换
+            和其他运算符一样，当关系运算符操作数值时必须遵循以下规则：
+            <1> 两侧都是数值，直接比较
+            <2> 两侧的操作都是字符串，则比较两个字符串对应的字符编码值
+                ASCII码 是电脑内部，每一个字符和字符对应编码的一张表
+                097 a  098 b
+                66 A
+                (2) 逐位比较   ASCII
+            二、在相等和不相等的比较上，如果操作是非数值，则遵循以下规则：
+                <1> 一个操作时布尔值，则将转为数值，再比较
+                <2> 一个操作符时字符串，也是转位数值，再比较
+                <3> 一个操作时NaN 则返回false !=返回true
+                <4> === 恒等于 必须数字和数据类型都相等返回true
+        */
+
+      // alert("A" < "a");
+      // alert("abc">"adc");
+      // alert(1==true);
+      // alert(0==false);
+    //   alert(10 == "10a");
+    //   alert(10 === "10");
+    //   alert(10 === Number("10"));
+    /*
+            小彩蛋：
+            alert(Number(null)); //0
+            alert(Number(undefined)); // NaN
+    */
+    alert(Number(null)); //0
+    alert(Number(undefined)); // NaN
+    alert(null == undefined);
+    
+    </script>
+  </head>
+  <body></body>
+</html>

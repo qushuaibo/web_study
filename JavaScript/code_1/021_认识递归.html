@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: sueRimn
+ * @Date: 2020-03-29 12:47:01
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-03-29 21:44:09
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /*
+            函数递归：如果面试。面试官会问递归的知识，
+            但公司命令禁止使用递归
+        */
+       /*
+            递归：
+                满足以下三个条件：
+                    1、函数自己调用自己
+                    2、一般情况有参数
+                    3、一般情况有return
+        【注】递归可以解决循环做的所有的事情，有一些循环不容易解决的事情
+        递归也可以解决
+       */
+    //    计算1-n的和
+    // 循环方法
+    function sum(n){
+        var res = 0;
+        for (var i=1;i <=n;i++){
+            res += i
+        }
+        return res;
+    }
+    alert(sum(100));
+
+    //    计算1-n的和
+    // 递归方法
+    /* 
+        sum(100) = sum(99)+100
+        sum(n) =  sum(n-1)+n
+     */
+    function sum(n){
+        if(n ==1){
+            return 1;
+        }
+        return sum(n-1)+n;
+    }
+    alert (sum(100));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /*
+            输入月份，显示月的天数
+        */
+       var month = 2;
+       var year = 2000;
+       switch(month){
+           case 1:
+           case 3:
+           case 5:
+           case 7:
+           case 8:
+           case 10:
+           case 12:
+               alert("31天");
+               break;
+            case 2:
+                if(year%4 ==0 && year%100 !=0 || year%400==0){
+                    alert("29天");
+                }
+                else{
+                    alert("28天");
+                }
+            break;
+            default:
+                alert("30天");
+                break;
+       }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

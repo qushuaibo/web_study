@@ -1,0 +1,51 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-19 23:00:47
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-19 23:19:32
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () { 
+            var oUl = document.getElementById("ul1");
+            var aLis = oUl.getElementsByTagName("li");
+
+            // 添加点击事件
+            for(var i =0 ;i <aLis.length;i++){
+                aLis[i].onclick = function () {  
+                    this.style.backgroundColor = "red";
+                }
+            }
+
+            var obtn = document.getElementById("btn1");
+            var i = 6;
+            obtn.onclick = function () {  
+                var newNode = document.createElement("li");
+                newNode.innerHTML = i++ *111;
+                oUl.appendChild(newNode);
+            }
+        }
+        /* 
+            1、浪费
+            2、后添加的节点没有点击事件
+         */
+    </script>
+</head>
+<body>
+    <button id="btn1">新增节点</button>
+    <ul id="ul1">
+        <li>111</li>
+        <li>222</li>
+        <li>333</li>
+        <li>444</li>
+        <li>555</li>
+    </ul>
+    
+</body>
+</html>

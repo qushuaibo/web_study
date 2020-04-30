@@ -1,0 +1,62 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-24 11:49:46
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-24 11:58:33
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script>
+         /* 
+            数组  
+                for
+                for in 
+                foreach
+                for of
+            对象
+                for in 
+            Set for of
+            Map for of
+          */
+
+          var arr = [10,20,30,40,50];
+          for(var i=0;i<arr.length;i++){
+              document.write("for循环"+arr[i]);
+              document.write("<br>");
+          }
+          for(var i in arr){
+              document.write("for in循环"+arr[i]);
+              document.write("<br>");
+          }
+          arr.forEach(function (item,index) {  
+              document.write("foreach 循环"+item);
+              document.write("<br>");
+          })
+          
+          // 直接遍历数组中的元素
+          for(var item  of arr ){
+              document.write("for of 循环"+item);
+              document.write("<br>");
+          }
+
+          var person = {
+              username:"gang",
+              age:20,
+              sex:"男"
+          }
+          for(var attr in person){
+              document.write("对象"+attr+person[attr]);
+              document.write("<br>");
+          }
+     </script>
+    
+ </head>
+ <body>
+     
+ </body>
+ </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      /*
+            函数的语法：
+            函数声明
+             function 函数名(){
+                执行的代码
+             }
+             函数调用：
+                函数名()
+            有参数无返回值的函数：
+                格式
+                形式上的参数
+                function(形参){
+            调用函数的时候：
+                    格式 函数名(实参)
+                    实参给形参传值
+
+                }
+        */
+      function print(n) {
+          for(var i=0;i<n;i++)
+        document.write("hello world<br>");
+      }
+      print(5);
+
+        /* 
+            函数运行的结果不能写在里面
+            return 关键字
+            格式：
+              function(){
+                函数体
+                return 表达式
+              }
+	      如果遇到return函数会终止
+        */
+      function add(num1,num2) {
+        // alert(num1+num2);
+        document.write(num1+num2);
+        return "hello";
+        }
+
+        var res = add(10,20);
+        alert(res);
+      	document.write('html')
+    </script>
+  </head>
+  <body></body>
+</html>
+
+

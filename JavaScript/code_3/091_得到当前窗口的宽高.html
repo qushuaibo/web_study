@@ -1,0 +1,43 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-19 22:19:44
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-19 23:00:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script src = "../tool/tool_1.js"></script>
+    <script>
+        window.onload = function () {  
+            document.onclick = function(){
+                // 输出当前窗口的宽和高
+                var windowWidth = document.documentElement.clientWidth ||
+                document.body.clientWidth;
+                var windowHeight = document.documentElement.clientHeight ||
+                document.body.clientHeight;
+
+                var oDiv = document.getElementById("div1")
+                limitdrag(oDiv)
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    
+</body>
+</html>

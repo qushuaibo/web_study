@@ -1,0 +1,83 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-04 13:07:28
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-04 13:35:09
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 
+            DOM document object model
+                节点类型
+                    元素节点 <div></div>
+                    属性节点 id = "div1"
+                    文本节点 div文本
+         */
+      /* 
+            childNodes 访问当前节点下所有的子节点
+                返回：伪数组
+            firstChild    第一个节点
+            lastChild    最后一个
+            nextSibling    当前兄弟节点的下一个节点
+            previousSibling   当前兄弟节点的上一个节点
+
+            只获取元素节点
+            children
+            firstElementChild
+            lastElementChid
+            nextElementSibling
+            previousElementSibling
+
+                        nodeType    nodeName    nodeValue
+            元素节点        1         标签名        null
+            属性节点        2         属性名       属性值
+            文本节点        3         #text       文本内容
+
+        算文本        空格 回车 换行 是字符 
+
+         */
+      window.onload = function() {
+        var oDiv = document.getElementById("div1");
+        // alert(oDiv.childNodes.length);
+        // alert(oDiv.childNodes[0].nodeName);
+        // alert(oDiv.childNodes[1].nodeValue);  // 文本节点
+        // alert(oDiv.childNodes[2].nodeValue);
+
+        // alert(oDiv.firstChild.nodeName);
+        // alert(oDiv.lastChild.nodeName);
+
+        // alert(oDiv.childNodes.length);  // 变成了5
+        // for(var i =0;i<oDiv.childNodes.length;i++){
+        //     document.write(oDiv.childNodes[i].nodeName+'<br>');
+        // }
+
+        /* 
+            将纯空白的文本节点去除
+         */
+
+        //  // 只有元素节点
+        //  alert(oDiv.children.length);
+        //  alert(oDiv.firstElementChild.nodeName);
+        //  alert(oDiv.lastElementChild.nodeName);
+
+        alert(oDiv.firstElementChild.nextElementSibling);
+
+
+
+      };
+    </script>
+  </head>
+  <body>
+    <div id="div1">
+        <em>em文本</em>
+        div文本
+        <strong>strong文本</strong>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-30 16:34:56
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-30 16:38:38
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        /*
+            addClass()
+            removeClass()
+         */
+        $(function () {  
+            // 添加class
+            // 如果存在相同的名字会自动合并不会报错
+            $("#div1").addClass("box3 box4")
+
+            // 删除calss
+            // 不存在class也不会报错
+            $("#div1").removeClass("box3 box5")
+        })
+    </script>
+</head>
+
+<body>
+    <!-- class可以设置多class -->
+    <div id="div1" class="box1 box2"></div>
+</body>
+
+</html>

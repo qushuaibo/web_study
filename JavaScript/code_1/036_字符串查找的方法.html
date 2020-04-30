@@ -1,0 +1,95 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-31 21:32:14
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-31 21:57:41
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            字符串的方法(了解)
+            必须在document.write()中使用
+            不常用
+            .big()  .blink .bold 等等
+         */
+        document.write('hello'.big()+'world'.fontcolor("red")+
+        "xxx".sub()+"xx".sup());
+        document.write("<br>");
+
+        /* 
+            charAt()
+            charCodeAt()
+                格式：字符串.charCodeAt(下标)
+                功能：访问字符串对应下标字符的ASCII码值
+            String.fromCharCode();
+                格式: String.frommCharCode(码值)
+                返回值：对应的字符
+         */
+        var str = 'abc';
+        document.write(str.charCodeAt(0));
+        document.write("<br>");
+        var str1 = String.fromCharCode(97,98,99);
+        document.write(str1);
+        document.write("<br>");
+
+        /* 
+            indexOf()
+                格式：supStr.indexOf(subStr,start)
+                参数：第一个参数，要查找的字符
+                    start:开始的地方
+                功能：在supStr中查找subStr第一次出现的位置，从start位置开始
+                    查找
+                返回值： -1 说明没有查找到
+         */
+        var supStr = 'abcabceea';
+        var subStr = 'abc';
+        var index = supStr.indexOf(subStr,1);
+        document.write(index);
+        document.write("<br>");
+        /* 
+            lastIndexOf()
+                格式：supStr.lastIndexOf(subStr)
+                功能：最后一次出现的位置
+            返回值：-1 代表没有
+         */
+        var index = supStr.lastIndexOf(subStr);
+        document.write(index);
+        document.write("<br>");
+        /* 
+            search()
+                格式: supStr.search(subStr);
+                参数：字符串/正则表达式
+                功能：在supStr中查找第一次出现SUbStr的地方
+                返回值： -1 没有
+         */
+        var supStr = 'Abcabceea';
+        var index = supStr.search(subStr);
+        document.write(index);
+        document.write("<br>");
+        /* 
+        regular expression
+        检出 re
+         正则   /abc/
+            修饰符：
+                i 忽略大小写
+                g 全局
+
+         */
+        var supStr = 'Abcabceea';
+        var index = supStr.search(/abc/i);
+        document.write(index);
+        document.write("<br>");
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

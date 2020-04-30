@@ -1,0 +1,63 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-27 22:57:13
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-27 23:17:55
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #img1 {
+            width: 300px;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oImg = document.getElementById("img1")
+            oImg.onmouseover = function () {
+                // 30 => 100
+                startMove(100);
+            }
+            oImg.onmouseout = function () {
+                // 100 => 30
+                startMove(30);
+
+            }
+        }
+        // 设置一个中间变量 透明度当前值
+        var alpha = 30;
+        var timer = null;
+        function startMove(iTarget) {
+            var oImg = document.getElementById("img1")
+            clearInterval(timer);
+            var speed = 2;
+            speed = iTarget > alpha ? Math.abs(speed) : -Math.abs(speed)
+            timer = setInterval(function () {
+                if (iTarget == alpha) {
+                    clearInterval(timer)
+                } else {
+                    alpha += speed;
+                }
+                // document.title = alpha;
+                // 透明度兼容
+                oImg.style.opacity = alpha/100;
+                oImg.style.filter = `alpha(opacity=${alpha})`;
+            }, 30)
+        }
+    </script>
+</head>
+
+<body>
+    <img src="../pic/a1.png" alt="" id='img1'>
+</body>
+
+</html>

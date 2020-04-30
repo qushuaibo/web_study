@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-30 17:30:17
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-30 17:54:59
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            insertBefore()   berfore()
+            insertAfter()    after()
+
+            appendTo()插入到子节点的末尾     和appedChild(类似js的方法) append()
+
+            prepentTo() 插入到子节点的首位  prepent()
+
+            remove 
+
+         */
+        $(function () {
+            // 找到span节点插入到div的前面
+            // $("span").insertBefore($("div"))
+
+            // 找到div节点插入到span节点的后面
+            // $("div").insertAfter($("span"));
+
+            // 找到span节点。插入多div节点的子节点的末尾
+            // $("span").appendTo($("div"));
+
+            // 找到span节点，插入到div节点的子节点的首位
+            // $("span").prependTo($("div"));
+
+            // 删除节点
+            // $("div").remove();
+
+            // div节点前面是span 
+            // $("div").before($("span"));
+
+            // 没有to便于链式操作 操作主体是div
+            // $("div").before($("span")).css("backgroundColor","red")
+
+            // 操作主体是span
+            $("span").insertBefore($("div")).css("backgroundColor","red")
+          })
+    </script>
+</head>
+<body>
+   <div id="div1"><em>em</em></div> 
+   <span>span</span>
+</body>
+</html>

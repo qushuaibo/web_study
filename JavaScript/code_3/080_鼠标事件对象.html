@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-16 19:02:39
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-16 19:13:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            事件对象
+                button 的属性
+                    0 左键
+                    1 滚轮
+                    2 右键
+
+            获取当前鼠标位置（原点不同）
+                clientX  clientY  (当前窗口左上角)
+                pageX    pageY  (整个页面的左上角)
+                screenX  screenY   ( 电脑屏幕的左上角)
+         */
+        window.onload = function () {  
+            document.onmousedown = function (ev) {  
+                var e = ev || window.event;
+                // alert(e.button);
+
+                alert(e.clientX+","+e.clientY);
+                alert(e.pageX+","+e.pageY);
+                alert(e.screenX+","+e.screenY);
+            }
+        }
+    </script>
+
+</head>
+<body style="height: 300px;">
+    <h1>hello world</h1>
+    
+</body>
+</html>

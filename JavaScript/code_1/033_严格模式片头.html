@@ -1,0 +1,54 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-31 11:10:54
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-31 11:39:23
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            严格模式：写在那个作用域下，在那个作用域就生效
+            use strict 
+            注： 不要把严格模式写在全局
+
+            用了严格模式的变化
+                1、全局变量声明时，必须加var
+                2、函数内不能重名属性
+                3、arguments对象不允许被动态改变
+                4、新增保留字体 implements ,let,package,private等等
+         */
+        function show() {
+            "use strict"
+             var num = 10;
+          }
+          show()
+        //   document.write(num);
+
+          // 并不会报错
+          function show(num1,num1,num2){
+              alert(num1+","+num2);
+          }
+          how(10,20,30);
+         // 使用严格模式
+          function how(num1,num1,num2){
+              "use strict"
+              alert(num1+","+num2);
+          }
+          show(10,20,30);
+
+          /* 
+            * 向下查找出现该单词的地方
+            # 向上查找出现该单词的地方
+           */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

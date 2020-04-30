@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /*
+            强制数据类型转换;
+                Boolean()  
+                    非0即真
+                    非空即真
+                    特殊类型为false
+                    
+                Number()
+                    只有纯数字组成的字符串转数字，才能转数字，其他为欸NaN
+
+                pareInt()
+                    1、只要整数
+                    alert(parseInt("100a"));
+                    2、将别的进制转换为十进制
+                parseFloat()
+
+        */
+    //    alert(Boolean(-1));
+    //    alert(Boolean(1));
+    //    alert(Boolean(0));
+    //    alert(Boolean("fd"))
+    //    alert(Boolean(""));  空字符串
+    //    alert(Boolean(null));
+    //    alert(Boolean(NaN));
+    //    alert(Boolean(undefined));
+    alert(parseInt("100a"));
+    alert(parseInt("3.14a"));
+    alert(parseFloat("3.14a"));
+
+
+    var str1 = "110100"
+    alert(parseInt(str1,2))  // 告诉是二进制
+    var str2 = "63";
+    alert(parseInt(str1,8))  //八进制转二进制
+    
+
+
+
+    </script>
+</head>
+<body>
+
+</html>

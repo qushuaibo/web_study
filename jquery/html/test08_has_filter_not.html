@@ -1,0 +1,38 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-29 18:20:17
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-29 19:05:38
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+         filter  过滤
+         not     过滤的反义词
+         has     直接判读子节点是否有符合条件的元素 
+         */
+        $(function () {
+            // $("div").filter(".box").css("backgroundColor", "orange")
+            // $("div").not(".box").css("backgroundColor", "orange")
+            // $("div").has(".box").css("backgroundColor", "orange")
+            alert($("div").has(".box").html());
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="box">div1</div>
+    <div>div2 <strong class="box">strong</strong></div>
+</body>
+
+</html>

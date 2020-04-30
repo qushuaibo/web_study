@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>
+            html框架
+        </title>
+        <meta charset='utf-8'>
+    </head>
+    <!--frameborder 0和1指定是否右边框-->
+    <!--border 指定边框的宽度-->
+    <frameset frameborder='1' border='1' rows='90,*,90' noresize='noresize'>
+        <frame src='./02_图片标记.html' name='top'/>
+            <frameset cols='30%,70%' border='1'>
+                <frame src='03_超链接.html' />
+                <frame src='04_表格.html'/>
+            </frameset>
+        <frame src='./01_文档设置标记.html' name='bottom'/>
+
+    </frameset>
+</html>

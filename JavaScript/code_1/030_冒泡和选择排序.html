@@ -1,0 +1,53 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-30 19:24:43
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-30 19:59:21
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            冒泡排序：
+                规则：前后两个数两两比较大小，如果复合条件就交互两个数的位置
+                规律：每一轮排序，都可以找出一个较大的数据
+                比较的轮数 = 行数-1；
+                每一轮比较的次数 = 数组长度-当前的轮数
+         */
+/*          var arr = [9,8,7,6,5];
+         function bubbleSort(arr){
+         for (var i = 0;i<arr.length-1;i++)
+         {
+             // 每一轮比较的次数
+             for (var j=0;j<arr.length-(i+1);j++)
+             { if (arr[j]>arr[j+1])
+             {
+                var tmp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = tmp;
+             }
+             }
+         }
+         return arr;
+
+         } */
+
+    </script>
+    
+    <script src = "../tool/tool_1.js"></script>
+
+    <script>
+        arr2 = [2,4,1];
+        bubbleSort(arr2);
+        document.write(arr2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Document</title>
+		<meta charset = 'utf-8'>
+		<script>
+			/*
+				每一个函数都有一个arguments,系统内置的
+			*/
+			function show(){
+				alert(arguments.length);
+			}
+			show(19,true,2);
+			function sum(){
+				var res = 0;
+				for(i = 0; i<arguments.length;i++){
+					res += arguments[i]
+				}
+				return res;
+			}
+			var num = sum(10,20,30);
+			alert(num);
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

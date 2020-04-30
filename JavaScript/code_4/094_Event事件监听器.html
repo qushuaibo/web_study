@@ -1,0 +1,61 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-19 23:24:15
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-19 23:39:27
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+          1、传统事件绑定
+            1、重复添加 覆盖
+            2、不能精确的删除某个函数
+
+            2、事件监听器
+                addEventListener()
+                    格式node.addEventListener("click")
+                    参数
+                        第一个参数 事件类型
+                        第二个参数 绑定函数
+                        第三个参数 布尔值 true 事件捕获
+                                        false 事件冒泡
+                removeEventListener()
+                    格式：node.removeEventListener
+                    参数
+                        第一个参数 事件类型
+                        第二个参数 删除函数的名称
+         */
+
+         window.onload = function(){
+             var oBtn = document.getElementById("btn1");
+             /* 
+                oBtn.onclick = function(){
+                    alert("点击1");
+                }
+
+                oBtn.onclick = function(){
+                    alert("点击2");
+                }
+              */
+                
+              oBtn.addEventListener("click",function () { 
+                  alert("点击1")
+               },false);
+
+               oBtn.addEventListener("click",function () {  
+                   alert("点击2")
+               },false)
+
+         }
+    </script>
+</head>
+<body>
+   <button id="btn1">按钮</button> 
+</body>
+</html>

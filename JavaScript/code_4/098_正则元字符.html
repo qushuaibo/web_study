@@ -1,0 +1,75 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-23 08:31:09
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-23 17:41:15
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            元字符：在正则表达式中有特殊含义的字符串
+            
+            单个数字和字符的元字符
+              . 匹配任意一个字符
+              [] 匹配单个范围内的字符
+              [0-9]   数字0-9
+              [a-zA-Z0-9_] 数字字母下划线
+              [^]  匹配任意一个除中括号内的
+              [^0-9]  代表匹配非数字
+              \w   数字字母下划线   word
+              \W   非数字字母下划线
+              \d   数字0-9   digit
+              \D   非数字  [^0-9]
+              <[\s\S]*?> 
+
+            重复字符 x(任意个字符)
+                x? 匹配0个或者1个
+                x+ 至少一个
+                x* 匹配任意个
+                x{m,n} 匹配至少m个至多n个 包括n
+                x{n}  必须匹配n个
+                (xyz)+   小括号括起来的部分当作单个字符
+
+            空白字符
+                \s 匹配任意单个空白字符 space
+                \S 匹配任意单个非空白字符
+              
+            毛字符
+                ^ 行首匹配
+                $ 行尾匹配
+            替代字符
+                | 或
+            修饰符
+                i 忽略大小写
+                g 全局匹配
+                m 换行匹配
+                    如果在字符串中遇到换行，重新开始计算行首
+            转译字符
+                \.
+
+                qushuaibo qushuaibo     qushuaibo
+         */
+        var str = "baidu";
+        var box = /^goo\sgle|baidu/;
+        // console.log(box.test(str));
+
+        
+        var str = "g,ogle";
+        box = /g[a-zA-Z0-9_]ogle/;
+        // console.log(box.test(str));
+
+        var str = "1、baidu\n2、go5gle\n3、bing";
+        var box = /^\d/gm
+        console.log(str.replace(box,"*"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

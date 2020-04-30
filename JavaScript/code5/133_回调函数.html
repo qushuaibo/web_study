@@ -1,0 +1,36 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-28 13:07:17
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-28 13:12:12
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            KFC 点餐系统
+         */
+        function KFC(food,eatFunc) {  
+             alert('你的餐已经准备好了，请及时就餐');
+             eatFunc();
+        }
+        function xiaohua() {  
+            alert('打包带走');
+        }
+        function xiaoming() { 
+            alert("堂食");
+         }
+        KFC("老北京鸡肉卷",xiaohua);
+        KFC("小辣椒",xiaoming);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

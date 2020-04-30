@@ -1,0 +1,71 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-03 00:01:03
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-03 00:21:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            日期对象格式化
+         */
+        var d = new Date();
+        document.write(d.toDateString());
+        document.write("<br>");
+        document.write(d.toTimeString());
+        document.write("<br>");
+        document.write(d.toLocaleDateString());  // 
+        document.write("<br>");
+        document.write(d.toLocaleTimeString());
+        document.write("<br>");
+        document.write(d.toLocaleDateString()+d.toLocaleTimeString());  // 
+        document.write("<br>");
+
+        /* 
+            自定义日期格式(set\get)
+         */
+        function showTime(){
+            var d = new Date();
+            var year = d.getFullYear();
+            var month = d.getMonth()+1;  // 0~11
+            var day = d.getDate();
+
+            var week = numOfChinese(d.getDay());  // 0 是周日
+            
+            var hour =doubleNum(d.getHours());
+            var min =doubleNum(d.getMinutes());
+            var sec =doubleNum(d.getSeconds());
+
+            var str = year + "年" +month+"月"+day+"日"+"  "+"星期"+week+"  "+ 
+                hour+":"+min+":"+sec;
+            return str;
+        }
+        // 数字转中文
+        function numOfChinese(num){
+            var arr = ["日","一","二","三","四","五","六"];
+            return arr[num];
+        }
+        // 将时间转为两位数显示 
+        function doubleNum(n){
+            if(n < 10){
+                return "0"+n;
+            }
+            else{
+                return n;
+            }
+        }
+        document.write(showTime());
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

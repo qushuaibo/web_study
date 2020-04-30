@@ -1,0 +1,48 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-29 12:25:21
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-29 12:32:36
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        window.onload = function () {
+            // 写法一
+            // $("li:eq(2)").css("backgroundColor","red");
+
+            // 写法二
+            // $("li").eq(2).css("backgroundColor","blue");
+
+            // 写法一
+            //    $("li.box").css("backgroundColor","red");
+            // 写法二
+            $("li").filter(".box").css("backgroundColor", "red");
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>1111</li>
+        <li class="box">1111</li>
+        <li>1111</li>
+        <li class="box">1111</li>
+        <li>1111</li>
+    </ul>
+    <span title="name">span</span>
+    <div title="name">div</div>
+    <p>p</p>
+</body>
+
+</html>

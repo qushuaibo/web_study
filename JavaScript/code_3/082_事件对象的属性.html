@@ -1,0 +1,47 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-17 11:56:49
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-17 12:08:14
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            shiftKey   当按下为true
+            altKey    
+            ctrlKey
+            metaKey   windows 系统为开始键
+                    mocos 按下commond键
+            【注】 形成一些快捷键
+         */
+        window.onload = function(){
+            document.onclick = function(ev){
+                var e = ev || window.event;
+                var arr = [];
+                if(e.shiftKey){
+                    arr.push("shift");
+                }
+                if(e.altKey){
+                    arr.push("alt");
+                }
+                if(e.ctrlKey){
+                    arr.push("ctrl");
+                }
+                if(e.metaKey){
+                    arr.push("meta");
+                }
+                alert(arr);
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

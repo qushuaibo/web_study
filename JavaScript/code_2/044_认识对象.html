@@ -1,0 +1,140 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-02 14:53:06
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-02 15:32:40
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            1、发展历史
+                汇编语言：移植性较差 a\b\c 最后只剩下c
+                学习成本太高
+                编程语言的基础上 Java c++ Javascript Object-c Pyython 面向对象
+                
+            2、思想
+                面向过程:只考虑数学逻辑
+                面向对象: 直接将生活逻辑映射到编程
+                    <1> 分析实体
+                    <2> 设计实体的属性和功能
+                    <3> 让实体之间向回作用得到结果
+                    例子：
+                        有一辆车 60km/h 路100km 让车跑完路要多长时间
+                面向过程： 
+                    var hours = 1000/60;
+                    alert(hours);
+                面向对象:
+                    车
+                        speed 68km/h
+                        功能：跑
+                    路  
+                        属性；
+                            length:1000km
+                        功能：被车跑
+                
+                贪食蛇
+                        面向过程：  
+                            
+                        面向对象：
+                            实体：蛇
+                                    跑
+                                方块
+                                    
+                                食物：
+                                    属性：
+                语法：
+                    类 ： 具有相同特征的抽象概念
+                    对象 具体的某一个体或者实例 唯一的
+                    狗：类
+                    遇到的那只：对象(唯一的)
+                    电脑：类
+                    我用的对象
+         */
+        /* 
+           1、通过new运算符创建对象 
+           2、通过省略new
+           3、对象常量赋值
+           
+           对象属性：代表婚后的你
+           变量：婚前的你
+           obj3.age
+           obj3.show()
+           
+           也可以通过
+                    obj3["username"]
+                    obj3["age"]
+                必须填写字符串
+         */
+        var obj1 = new Object();
+        var obj2 = Object();
+        var obj3 = {};   //大括号代表对象
+/* 
+        // 新增属性
+        obj3.username = "钢铁侠";
+        obj3.age = 18;
+        // 新增方法 和函数一样
+        obj3.show = function () {
+            document.write("我的名字叫"+obj3.username);
+            document.write("<br>")
+          } */
+        // 通过大括号新增属性
+        var obj3 ={
+            username:"钢铁侠",
+            age:18,
+            show:function(){
+                document.write("琚帅波");
+            }
+        }
+        
+        document.write(obj3.username);
+        document.write("<br>")
+        document.write(obj3.age);
+        document.write("<br>")
+        obj3.show();
+        document.write(obj3["age"]);
+        document.write("<br>");
+        document.write(obj3["show"]());
+
+        /* 
+            delete 删除对象的属性或方法
+         */
+        delete obj3.username;
+        // alert(obj3.username);
+        /* 
+            基本数据类型：
+                基本数据类型只能存储一个值
+                数组：可以处理批量的值
+                对象：既可以存储数据又可以存储函数
+         */
+        
+         // 分析
+            // 车 路
+        var car ={
+            speed:06,
+            run:function(road){
+                return road.length/car.speed;
+            }
+        };
+        var bridge = {
+            length:1000
+        };
+
+        var hours = car.run(bridge);
+        document.write("<br>");
+        // toFixed() 保留n位小数
+        document.write("它一共花了"+hours.toFixed(2)+"小时");
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

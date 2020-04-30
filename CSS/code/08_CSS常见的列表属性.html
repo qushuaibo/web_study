@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Css常见的列表属性</title>
+        <meta charset="utf-8">
+        <style type="text/css">
+         /* 利用list-style 可以将无序列表和有序列表的转换*/
+            .inside{
+                list-style: ;
+                list-style-position: inside;
+            }
+            .img{
+                list-style: ;
+                list-style-image: url(/pic/lyt2.jpg)
+
+            }
+            .outside{
+                list-style: ;
+                list-style-position: outside;
+            }
+            ol{
+                list-style: circle inside url(/pic/gm.jpg);
+            }
+
+        </style>
+    </head>
+    <body>
+        <ul class="inside">
+            <li>无序列表</li>
+            <li>无序列表</li>
+            <ul class="img">
+                <li>无序列表</li>
+                <li>无序列表</li>
+            </ul>
+        </ul>
+        <ul class="img">
+            <li>无序列表</li>
+            <li>无序列表</li>
+        </ul>
+        <ul class="outside">
+            <li>无序列表</li>
+            <li>无序列表</li>
+        </ul>
+        <ol>
+            <li>无序列表</li>
+            <li>无序列表</li>
+        </ol>
+
+    </body>
+</html>

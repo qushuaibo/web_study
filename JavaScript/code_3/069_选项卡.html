@@ -1,0 +1,78 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-10 08:08:44
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-10 08:52:40
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 button {
+            width: 100px;
+            height: 30px;
+            background-color: gray;
+            color: white;
+            font-size: 18px;
+        }
+
+        #div1 .active {
+            background-color: orange;
+            color: blue;
+        }
+
+
+        #div1 div {
+            width: 330px;
+            height: 200px;
+            border: 1px solid black;
+            display: none;
+            /* background-color: blanchedalmond; */
+            /* overflow: scroll; */
+        }
+    </style>
+    <script>
+        /* 
+         */
+        window.onload = function () {
+            var oDiv = document.getElementById("div1");
+            var aBtns = oDiv.getElementsByTagName("button");
+            var oDivs = oDiv.getElementsByTagName("div");
+            //给每一个点击按钮添加点击
+            for (var i = 0; i < aBtns.length; i++) {
+                aBtns[i].index = i;
+                aBtns[i].onclick = function () {
+                    // 取消所有按钮的样式
+                    for (var j = 0; j < aBtns.length; j++) {
+                        aBtns[j].className = '';
+                        oDivs[j].style.display = 'none';
+                    }
+
+                    oDivs[this.index].style.display = "block";
+                    this.className = 'active';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <button class="active">HTML5</button>
+        <button>Python</button>
+        <button>Java</button>
+        <div style="display: block;">HTML5是嘻嘻dddddddddddddddddddd
+            ddddddddddddddddddddddddddddddddddddddddd<br>
+            ddddddddddddddddddddddddddddd嘻嘻嘻嘻嘻嘻<br></div>
+        <div>Python是嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻</div>
+        <div>Java是嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻</div>
+    </div>
+
+</body>
+
+</html>

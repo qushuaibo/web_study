@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-28 21:41:09
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-29 12:16:10
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        /* 
+            JQuery版本区别
+            1.0 可以兼容IE8以下
+            2.0 只兼容IE8以上
+            3.0 新增了好多ecma6
+
+            选择器的写法
+           
+
+         */
+        window.onload = function () {  
+            // #id
+            $("#div1").css("backgroundColor","red");
+            //calss
+            $(".box").css("backgroundColor",'red');
+            
+            // tag
+            $("ul li").css("backgroundColor","blue")
+
+            // name
+            $("[name = hello]").css("backgroundColor","black")
+        }
+    </script>
+</head>
+<body>
+   <div id="div1">div</div> 
+   <ul>
+       <li class = 'box'>1111</li>
+       <li name='hello'>1111</li>
+       <li>4444</li>
+       <li class="box"></li>
+   </ul>
+   <ol>
+       <li>22222</li>
+       <li name="hello"></li>
+       <li></li>
+       <li></li>
+       <li></li>
+   </ol>
+</body>
+</html>

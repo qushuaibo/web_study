@@ -1,0 +1,70 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-30 16:22:43
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-30 16:29:10
+ -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        #div1 button {
+            width: 100px;
+            height: 30px;
+            background-color: gray;
+            font-size: 16px;
+            color: white;
+        }
+
+        #div1 div {
+            width: 350px;
+            height: 350px;
+            background-color: white;
+            border: 1px solid black;
+            display: none;
+        }
+
+        #div1 .active {
+            background-color: orange;
+            color: blue
+        }
+    </style>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        $(function () {
+            var aBtns = $("#div1").find("button");
+            var aDivs = $("#div1").find("div");
+
+            // 给按钮添加点击事件
+            aBtns.click(function () {
+                // 将所有的样式取消
+                aBtns.attr("class", "");
+                aDivs.css("display", "none");
+
+                // 指定点击事件的按钮样式
+                $(this).attr("class", "active");
+                // 通过index获取点击按钮的下标 并通过eq进行传入
+                aDivs.eq($(this).index()).css("display", "block")
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <button class="active">html5</button>
+        <button>javascript</button>
+        <button>jquery</button>
+        <div style="display: block;">html5iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
+        <div>javascript iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
+        <div>jquery iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</div>
+    </div>
+</body>
+
+</html>

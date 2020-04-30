@@ -1,0 +1,87 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-24 10:25:43
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-24 11:29:54
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            集合
+                1、不重复
+                2、无序
+                3、不能存函数
+            Set 
+            Map
+         */
+         let imgs = new Set();
+         // 添加元素
+         imgs.add(100);
+         imgs.add(100);
+         imgs.add("hello");
+         imgs.add("hello");
+         imgs.add(true);
+         imgs.add("hello world")
+         imgs.add("hello world")
+         console.log(imgs);
+         /* 
+            集合的遍历
+            for...of 
+          */
+          for(let item of imgs.keys()){
+            //   console.log(item);
+          }
+
+          for(let item of imgs.values()){
+            //   console.log(item);
+          }
+
+          // entries 进入 键和值是一样的
+          for(let item of imgs.entries()){
+              console.log(item);
+          }
+
+/*           // 数组变集合
+          var set = new Set([10,20,30,30,40]);
+          console.log(set);
+          // 集合变数组 
+          var arr = [...set];
+          console.log(arr); */
+
+
+          var arr = [10,10,20,30];
+          arr = [...new Set(arr)];
+        //   console.log(arr);
+
+        /* 
+          map 映射
+         */
+        let map = new Map();
+
+        // 添加数据
+        map.set("张三","打鱼的");
+        map.set("李四","种地的")
+        map.set("李四","种地的")
+        
+        console.log(map);
+
+          // 取值
+          alert(map.get("李四"));
+
+         // 遍历
+         for(let [key,value] of map) {
+             console.log(key,value);
+         }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

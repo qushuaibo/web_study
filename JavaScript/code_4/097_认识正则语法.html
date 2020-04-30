@@ -1,0 +1,84 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-23 07:59:11
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-23 08:30:16
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            1、通过new去创建正则表达式
+                第一个参数：正则表达式主题 字符串
+                第二个参数：修饰符
+                i 忽略大小写
+                g 全局匹配 匹配完一个继续匹配
+         */
+        var box1 = new RegExp("hello","ig");
+        // alert(box1); // hello//ig;
+        var box2 = RegExp("hello","ig");
+        // alert(box2); // hello//ig;
+        var box3 = /hello/gi;
+
+        /* 
+            正则表达式的方法
+                test
+                    格式：正则.test(字符串)
+                    功能：在字符串中匹配这个正则是否存在
+                    返回值：如果匹配成功返回true，匹配失败返回false
+                exec
+                    格式：正则.exec(字符串)
+                    功能：在字符串中匹配这个正则是否存在
+                    返回值 ：成功数组 失败null
+         */
+        var str = "how aRe you";
+        var box1 = /are/i;
+        // alert(box1.test(str));
+        // alert(box1.exec(str));
+        // alert(box1.exec(str)[0]);
+
+        /* 
+        字符串的方法
+            match()
+                格式：字符串.match(正则) 
+                功能：在字符串中匹配是否含有符合正则
+                返回值：匹配成功 数组  匹配失败 null
+            replace()
+                格式：字符串.replace(oldStr,newStr);
+                功能：用newStr替换oldStr
+                返回值：替换成功的字符串
+            split()
+                格式：字符串.split(分隔符/正则);
+                功能：用分隔符分割原来字符
+                返回值：分割后的数组
+
+            search()
+                格式：字符串.search(字符串/正则)
+                功能：只能找到第一次出现的位置
+                返回值：找到>=0的下标
+                        返回-1 没有找到
+         */
+        var str = "how are ARE  you";
+        var box1 =/are/gi;
+        // alert(str.match(box1));
+        var newStr = str.replace(/are/ig,"*");
+        console.log(newStr);
+
+       var arr =  str.split("are");
+       console.log(arr);
+       var arr =  str.split(/are/i);
+       console.log(arr);
+        
+        var str = "how Are are ARE  you";
+        console.log(str.search(/are/ig));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

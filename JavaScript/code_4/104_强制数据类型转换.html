@@ -1,0 +1,81 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-23 18:12:38
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-23 21:28:26
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function show(x,y) {  
+            alert(this);
+            alert(x+","+y);
+        }
+
+        // show(10,10);
+
+        /* 
+            call
+                格式：函数名.call();
+                参数：
+                 第一个参数 传入强制指向
+                 第二个参数 后面延续以前的参数
+         */
+        //  show.call("call",20,3);
+
+         /* 
+            apply
+                格式：函数名.apply()
+                参数 
+                    第一个参数 传入this的强制指向
+                    第二个参数 数组 （数组里传入以前的参数）
+          */
+        //   show.apply("apply",[20,20]);
+
+          /* 
+             bind   预设this指向
+                格式 
+           */
+        function show(x,y) {
+            alert(this);
+            alert(x+","+y);
+          }
+          var res = show.bind("bind");
+        //   alert(res); 返回函数
+        //   res(40,40);
+        // 简化以后 
+        // show.bind("bind")(30,30);
+
+        function show() {  
+            alert(this);
+        }
+        window.onload = function () {  
+           var  oBtn = document.getElementById("btn1");
+           oBtn.onclick = show.bind("bind");
+        }
+        /* 
+            apply 使用小技巧
+
+         */
+
+        //  Math.min();  // 传入的参数必须一个一个传入
+        //  Matn.max();
+
+         alert(Math.min(3,4,2));
+
+         var arr = [10,30,20,9];
+
+        // 可以直接传入数组比较大小
+         alert(Math.min.apply(null,arr));
+    </script>
+</head>
+<body>
+    <button id="btn1">按钮</button>
+    
+</body>
+</html>

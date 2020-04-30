@@ -1,0 +1,130 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-24 16:45:21
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-24 19:35:34
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            面向对象 继承 和多态 和封装
+         */
+
+        function Dog({name,type,age}) {
+            this.name = name;
+            this.type = type;
+            this.age = age;
+          }
+       /* 
+          构造函数添加方法
+        */ 
+          Dog.prototype = {
+              run:function(){
+                  alert(this.name+"会飞的奔跑");
+              },
+              showSelf:function(){
+                  alert(`这是一个${this.type}的，${this.age}岁，叫${this.name}的小狗`);
+              }
+          }
+
+          /* 
+            分类更加细分的构造函数 继承
+           */
+          function Teddy({name,type,age,color}) {
+              // 继承属性
+              Dog.call(this,{
+                  name:name,
+                  type:type,
+                  age:age
+              })
+              // 添加自己的属性
+              this.color = color;
+            }
+            // 这样等于，在给子一级添加函数的时候，会加给父一级
+            // Teddy.prototype = Dog.prototype;
+            // Teddy.prototype.showColor = function () {  
+            //     alert(this.color);
+            // }
+
+            /* 
+                原型链继承
+             */
+            // 正确继承的方法 
+            for(var funcName in Dog.prototype){
+                Teddy.prototype[funcName] = Dog.prototype[funcName];
+            }
+            Teddy.prototype.showColor = function () {  
+                alert(this.color);
+            }
+
+            var xiaohong = new Teddy({
+                name:"小花",
+                type:"泰迪",
+                age:10,
+                color:"红色"
+            })
+            // alert(xiaohong.name);
+            xiaohong.showSelf();
+            xiaohong.showColor();
+
+            var xiaohei = new Dog({
+                name:"小黑",
+                type:"拉普拉多",
+                age:10,
+                color:"红色"
+            })
+            // xiaohei.showColor();
+
+            
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+            var obj1 = {
+                a:10,
+                b:20,
+                c:30
+            };
+            // 复合数据类型 只复制了地址
+            var obj2 = obj1;
+            obj2.c = 100;
+            console.log(obj1);
+            console.log(obj2);
+
+            // 这样复制是深拷贝
+            var obj3 = {};
+            for(var attr in obj1){
+                obj3[attr] = obj1[attr];
+            }
+
+    ////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////
+    /* 
+                        多态
+     */
+        
+            // 重写父级函数 不会影响父一级
+            Teddy.prototype.showSelf = function () {  
+                  alert(`这是一个${this.type}的，${this.age}岁，是${this.color}颜色
+                  ,叫${this.name}的小狗`);
+            }
+        xiaohong.showSelf();
+        xiaoheie.showSelf();
+        /* 
+            面向对象、继承 封装 多态
+            面向对象是一种思想
+            支持面向对象的思想是 类和对象 (ecma6之前没有类)
+            自己创造构造函数
+         */
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

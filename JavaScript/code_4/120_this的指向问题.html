@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            this永远指向当前函数的主人
+
+            总结this的指向
+                1、事件绑定
+                2、定时器
+                3、
+         */
+        function Aaa() {
+            this.a = 10;
+            var _this = this
+            var oBtn = document.getElementById("btn1");
+            // 将函数赋值给了buttonw this将指向onclick事件
+            // oBtn.onclick = show;
+
+            // 解决方法1
+            // 在函数里调用
+            // oBtn.onclick = function () {  
+            //     _this.show();
+            // };  
+
+            // 解决方法1
+            // 强制指向 show 的this
+            // oBtn.onclick =this.show.bind(this);
+
+            // 将函数给了定时器
+            // setTimeout(this.show,2000);
+            // 方法一 bind强制指向show
+            // setTimeout(this.show.bind(this),2000);
+            // 方法二
+            setTimeout(function () {  
+                _this.show();
+            },2000)
+            
+
+        }
+        Aaa.prototype.show = function () {
+            alert(this);
+        }
+
+        window.onload = function () {
+            var a1 = new Aaa();
+            a1.show();
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn1">按钮</button>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-30 18:38:06
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-30 18:54:12
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 
+            基本数据类型
+         */
+      var num1 = 10;
+      var num2 = num1;
+      num2 = 20;
+      document.write(num1 + "+" + num2);
+      document.write("<br>");
+      /* 
+            复合数据类型/引用数据类型
+            程序运行段：存储地址
+            堆：存储数据
+            先从程序运行段中找到地址，然后按编号从堆中找到数据
+            将arr1赋值给arr2，是将arr1中的地址传给arr2
+
+         */
+      var arr1 = [1, 2, 3];
+      var arr2 = arr1;
+      arr2.push(4, 5);
+      document.write(arr1);
+      document.write("<br>");
+      document.write(arr2);
+      document.write("<br>");
+      /* 
+            concat() 拷贝数组
+       */
+       arr2 = arr1.concat();
+      document.write(arr1);
+      document.write("<br>");
+      arr2.push("10");
+      document.write(arr2);
+      document.write("<br>");
+      
+       
+    </script>
+  </head>
+  <body></body>
+</html>

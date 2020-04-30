@@ -1,0 +1,47 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-30 18:56:49
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-30 19:09:44
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            在当前作用域声明的变量，会直接提升在整个代码的最前面
+         */
+        /* 
+            内存分配。一次分配
+         */
+         document.write(num);   // 声明提升
+         document.write('<br>');
+         var num =10;
+         document.write(num);
+         document.write('<br>');
+        
+        show();  // 提前声明 可以运行
+        document.write('<br>');
+        function show(){
+            document.write("hello world");
+        }
+        /* 
+            省略var 声明变量
+            会变成全局变量
+         */
+        function show(){
+            num =10;
+            document.write(num);
+        }
+        show();
+        document.write(num);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

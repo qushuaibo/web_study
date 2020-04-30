@@ -1,0 +1,45 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-17 13:03:29
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-17 13:21:27
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      #div1 {
+        width: 200px;
+        height: 200px;
+        background: url(../pic/gif_1.gif) no-repeat;
+        position: absolute;
+      }
+      body{
+          background-color: black;
+      }
+    </style>
+    <script>
+      /*
+       */
+      window.onload = function () {
+        var oDiv = document.getElementById("div1");
+        document.onmousemove = function (ev) {
+          var e = ev || window.event;
+          oDiv.style.left = e.clientX -80+ "px";
+          oDiv.style.top = e.clientY -80+ "px";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div id="div1"></div>
+  </body>
+</html>

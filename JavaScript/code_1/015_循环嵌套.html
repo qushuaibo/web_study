@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /*
+            打印三角形
+        */
+       for(var i =1;i<=5;i++){
+            for (var j =1;j<=i;j++){
+                document.write("O")
+            }
+            document.write("<br/>")
+       }
+       a = "r";
+       alert(9*a); // ==>NaN
+document.write(i+'fd');
+       // 九九乘法表
+       for(var i=1;i<=9;i++){
+           for (var j=1;j<=i;j++){
+               document.write(j+"X"+i+"="+(i*j)+"&nbsp");
+           }
+               document.write("<br/>")
+       }
+       /// 升级
+       // &nbsp 半角空格
+       // &ensp 全角空格
+       for(var i=1;i<=5;i++){
+           for(var k=1;k<=5-i;k++ ){
+               document.write("&ensp;&nbsp");
+            // document.write("⚪");
+
+           }
+           for (var j=1;j<=i;j++){
+               document.write("O");
+           }
+               document.write("<br/>")
+       }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

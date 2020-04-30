@@ -1,0 +1,49 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-30 18:21:56
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-30 18:36:50
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+         */
+            var arr = Array(30);
+            for(var i=0;i<arr.length;i++)
+            {
+                arr[i] = i+1;
+            }
+            document.write(arr);
+            document.write("<br>");
+            var average_arr = [];
+            for(var i=0;i<6;i++)
+            {
+                // 取出数组
+                var new_arr = arr.splice(0,5);
+                document.write(new_arr);
+                document.write("<br>");
+                // 求和
+                var sum = 0;
+                for (var j=0;j<new_arr.length;j++)
+                {
+                    sum += new_arr[j];
+                }
+                document.write(sum);
+                document.write("<br>");
+                // 求均值
+                average_arr.push(sum/5);
+            }
+                document.write(average_arr);
+                document.write("<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

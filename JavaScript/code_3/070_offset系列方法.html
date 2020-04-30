@@ -1,0 +1,50 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-10 08:53:48
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-10 12:30:27
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border:1px black solid;
+        padding: 8px;
+        margin:20px;
+      }
+    </style>
+    <script>
+      /* 
+            offsetWidth
+            offsetHeight
+
+
+            offsetLeft
+            offsetTop
+         */
+      window.onload = function () {
+        var oDiv = document.getElementById("div1");
+        alert(getStyle(oDiv,"width"));
+        alert(oDiv.offsetWidth)  // 得到数字 包括width+border+pading 
+      };
+
+      function getStyle(node, cssStyle) {
+        // 三目运算符
+        return node.currentStyle
+          ? node.currentStyle[cssStyle]
+          : getComputedStyle(node)[cssStyle];
+      }
+    </script>
+  </head>
+  <body>
+    <div id="div1"></div>
+  </body>
+</html>

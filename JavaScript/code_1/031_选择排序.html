@@ -1,0 +1,75 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-30 21:05:09
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-31 10:42:45
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 
+            选择排序：
+                规则：选出一个位置，这个位置上的数，和后面的数比较
+                    如果比较出大小就交互两个数的位置
+                比较的轮数：数组长度-1
+                每一轮比较的次数 = 数组长度-当前轮数
+         */
+      var arr = [9, 8, 7, 6, 5, 4];
+      // 擂台数
+      /*         function (changeSortAsc) {
+        for(var i = 0;i < arr.length-1;i++){
+            // 被比较的数
+            for (var j=i+1;j<arr.length;j++){
+                if (arr[i]>arr[j]){
+                    var tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+            return arr;
+        }
+          }
+        function (changeSortDesc) {
+        for(var i = 0;i < arr.length-1;i++){
+            // 被比较的数
+            for (var j=i+1;j<arr.length;j++){
+                if (arr[i]>arr[j]){
+                    var tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+            return arr;
+        }
+          }
+ */
+      /*         for(var i = 0;i < arr.length-1;i++){
+            // 被比较的数
+            for (var j=i+1;j<arr.length;j++){
+                if (arr[i]>arr[j]){
+                    var tmp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = tmp;
+                }
+            }
+        }
+        document.write(arr);
+ */
+    </script>
+    <script src="../tool/tool_1.js"></script>
+    <script>
+        var arr = [9,8,3,6,5,7];
+        var res_arr_asc = changeSortDesc(arr);
+        document.write(res_arr_asc);
+        document.write("<br>");
+        // document.write(res_arr_desc);
+        // document.write("<br>");
+    </script>
+  </head>
+  <body></body>
+</html>

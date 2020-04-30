@@ -1,0 +1,58 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-23 21:29:00
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-23 21:48:56
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            ECM6 新增语法
+            let 关键字声明变量 只用遇到大括号就形成作用域
+               let 块作用域
+            var 关键字声明的变量  将变量或者所在函数的大括号作为作用域
+
+            const 声明的变量 不可以更改
+         */
+        //  if(1){
+        //      var num =10;
+        //  }
+        //  alert(num);
+        //  if(1){
+        //      let num =10;
+        //     alert(num);
+        //  }
+        //  alert(num);
+
+        // for(let i =0;i<5;i++) {
+        //     setInterval(function(){
+        //         alert(i)
+        //     },4000)
+        // }
+        // alert(i);
+        window.onload =function(){
+            var oBtns = document.getElementsByTagName("button")
+            for (let i=0;i<oBtns.length;i++){
+                oBtns[i].onclick = function () {  
+                    alert(i);
+                }
+            }
+        }
+        const IP = "127.0.0.1"
+        alert(IP);
+        // IP = "dd"; 无法更改
+        alert(IP);
+    </script>
+</head>
+<body>
+   <button>按钮1</button>
+   <button>按钮2</button>
+   <button>按钮3</button> 
+</body>
+</html>

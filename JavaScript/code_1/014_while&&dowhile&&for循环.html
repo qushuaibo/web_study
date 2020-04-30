@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /*
+            输入10个hello word
+            三种循环：
+                while
+                    while(循环语句){
+                        执行
+                    }
+                do_while
+                    do{
+                        执行
+                    }
+                    while();
+                for
+                    for(表达式1；表达式2；表达式3){
+                        执行
+                    }
+                break 和 continue
+                    break 
+                       直接跳出循环
+                    continue
+                        终止一次循环
+                死循环：
+                    while(1){
+
+                    }
+                    do {}
+                    while(1)
+
+                    for(;;){
+
+                    }
+
+                    
+            代码简介
+            代码没有冗余
+            便于修改
+        */
+       var i = 0;  // 计数
+       while(i<10){
+           i++;
+           document.write("hello world<br/>");
+       }
+        var i =1;
+        var sum = 0;
+        do{
+            sum += i;
+            i++;
+        }
+        while(i <= 100);
+            alert(sum)
+
+        var num =5;
+        do {
+            alert("hello world")
+        }
+        while(num<5);
+
+        var sum = 0
+        for(i=0;i<=100;i++){
+            sum += i;
+        }
+        alert(sum);
+
+        for (i=1;i<=10;i++){
+            if(i == 5){
+                break;
+            }
+            document.write(i+"<br/>");
+        }
+        for (i=1;i<=10;i++){
+            if(i == 5){
+                continue;
+            }
+            document.write(i+"<br/>");
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

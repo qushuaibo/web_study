@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        // /*
+        //     运算符
+        //         1、基本运算
+        //             +-*/ %
+        //         2、关系运算符
+        //             > < <= >= !== ==
+        //         3、逻辑运算符 
+        //             && || !
+        //         4、一元运算符
+        //             ++ -- 
+        //         5、赋值运算符
+        //             =
+        //             +=
+        //             -=
+        // */
+       /*
+            表达式：任何数据和运算符组成的式子都叫做表达式
+                <1> 表达式的值
+                <2> 表达式的功能
+       */
+      /*
+            【注】 将不同数据类型进行计算
+            【注】 不同数据类型无法计算
+                    计算机自动完成转换才能计算
+            
+                    转换规则：
+                        1、任何数据类型和字符串进行相加操作时都会转换为字符串类型
+                        2、任何数据和字符串做加法以外的错做，那么字符串将先转换为数字在进行计算
+                            <1>如何字符串时纯数字组成的字符则转成数字
+                            <2>如果字符串中函数除数字以外的字符，转为NaN，NaN和任何运算结果都是NaN
+                        3、除字符串以外的数字进行运算，在运算的时候先转换为数字，在运算
+
+      */
+      var num =5;
+      alert(num % 2);
+      alert("he"+"wod");
+      alert("hello"+null);
+      alert("hello"+NaN);
+      alert("hello"+undefined);
+      alert(10-true);
+      alert(10-undefined);  // undefine ==> Nan
+      alert(10-NaN);
+
+
+      alert(100-"20");
+
+
+
+    </script>
+    <script>
+        /*
+            计算机不会进行小数计算
+
+            小彩蛋： 金融账户，只存储整数，单位是分
+        */
+       /*
+            除数可以为0
+       */
+       alert(0.8-0.1);
+       alert(10/0); // infinity
+       alert(-10/0); // -infinity
+    </script>
+</head>
+<body>
+
+</body>
+</html>

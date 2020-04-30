@@ -1,0 +1,48 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-23 14:53:07
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-23 18:11:38
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /* 
+            每一个函数都有一个内置变量this ，this指向当前函数的主人
+         */
+      // 常见的this
+      //1、声明的全局函数 指向window
+      /*       function show() {
+        alert(this);
+      }
+      show(); */
+
+      //this 指向person
+             var person = {
+          username:"钢铁侠",
+          show:function(){
+              alert(person.username);
+              alert(this.username);
+          }
+      }
+      person.show(); 
+
+      // 指向button
+      window.onload = function () {
+        var oBtn = document.getElementById("btn1");
+        oBtn.onclick = function () {
+          alert(this.innerHTML);
+        };
+      };
+      //
+    </script>
+  </head>
+  <body>
+    <button id="btn1">按钮</button>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-17 12:50:05
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-17 13:01:19
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{padding: 50px;}
+        #div1{
+            background-color: red;
+        }
+        #div2{
+            background-color: teal;
+        }
+        #div3{
+            background-color: violet;
+        }
+    </style>
+    <script>
+        /* 
+        浏览器上的事件的一个特点：事件流
+            事件冒泡:有里到外逐级触发
+            事件捕获：由外到里逐级触发
+
+            阻止事件冒泡的两种方法
+            cancelBubble = true 
+            stopPropagation()
+         */
+        window.onload = function(){
+            var aDivs = document.getElementsByTagName("div");
+            for(var i=0;i<aDivs.length;i++){
+                aDivs[i].onclick = function (ev) {  
+                    var e = ev || window.event;
+                    alert(this.id);
+                    // 方法一
+                    // e.cancelBubble = true;
+                    // 方法二
+                    // e.stopPropagation();
+
+                    // 兼容
+                    stopBubble(e);
+                }
+            }
+
+            // 封装一个跨浏览器兼容的事件冒泡
+            function stopBubble(e) {
+                if(e.stopPropagation){
+                    e.stopPropagation();
+                }
+                else{
+                    e.cancelBubble = true;
+                }
+              }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div id="div3"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

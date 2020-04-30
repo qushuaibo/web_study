@@ -1,0 +1,77 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-03 14:09:59
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-03 14:50:46
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            DOM : document object model
+                    加载网页的地方
+                节点类型
+                    元素节点   单标签 双标签
+                    属性节点   id="div1"
+                    文本节点   div文本
+                
+                元素节点的获取
+                    document.getElementById(id)
+                    功能：通过id获取符合条件的节点
+                    由于顺序执行null
+                        两种方法: 
+                            写在body标签下面
+                            使用函数 window.onload = fucntion(
+                            ){}
+
+         */
+        window.onload = function(){
+             // 写在这里的代码，将会最后执行
+            var oDiv = document.getElementById("div1");
+            // alert(oDiv);
+
+            // 只能访问标签内的css样式 内联样式
+            // 访问
+            // alert(oDiv.id);
+            // alert(oDiv.title);
+            // alert(oDiv.className);
+            alert(oDiv.innerHTML);
+
+            // 赋值
+            // oDiv.id = "div2";
+            // oDiv.title = 'world';
+            // oDiv.className = "dd";
+
+              // 访问style
+            //   alert(oDiv.style.width);
+            //   alert(oDiv.style.height);
+            //   alert(oDiv.style.backgroundColor);
+              /* 
+                遇到横杠的 将-去掉 改成字母大写
+               */
+            // 修改赋值 style
+            oDiv.style.backgroundColor = 'blue';
+
+
+
+
+        }
+
+
+        //  由于是顺序执行所有找不到
+        //  var oDiv = document.getElementById("div1");
+        //  document.write(oDiv);
+        //  document.write("<br>");
+    </script>
+</head>
+<body>
+    <div id="div1" title="hello" class="box"style="width:300px;
+    height:300px;background-color:red">div文本</div>
+    
+</body>
+</html>

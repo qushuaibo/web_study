@@ -1,0 +1,36 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-04-29 19:06:20
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-04-29 19:13:55
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            prev 当前兄弟节点的上一个节点
+            next 当前兄弟节点的下一个节点
+         */
+        $(function () { 
+            $("h3").prev().css("backgroundColor","red")
+
+            $("h3").next().css("backgroundColor","green")
+         })
+    </script>
+
+</head>
+<body>
+    <h2>h2</h2>    
+    <p>p</p>
+    <h3>h3</h3>
+    <em>em</em>
+    <div>div</div>
+</body>
+</html>

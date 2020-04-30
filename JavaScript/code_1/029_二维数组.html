@@ -1,0 +1,57 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-03-30 19:10:25
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-03-30 19:22:08
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            数组存储数据；数据就是元素，元素可以是任意的数据类型
+            二维数组：人为起的
+         */
+         var arr = [1,2,3];
+         var arr2 = [true,100,"hello",arr];
+         document.write(arr[0]);
+         document.write("<br>");
+         document.write(arr2[3][0]);
+         document.write("<br>");
+         var arr = [[1,2],[3,4]];
+         document.write(arr);
+         document.write("<br>");
+         var arr = [
+             [1,2,3,4,5],
+             [6,7,8,9,1],
+             [1,2,3,4,5],
+             [6,7,8,9,1],
+             [6,7,8,9,1]
+             ]
+        document.write(arr);
+        document.write("<br>");
+        for(var i=0;i<arr.length;i++){
+            for (var j=0;j<=i;j++){
+                document.write(arr[i][j]+"&nbsp");
+            }
+            document.write("<br>");
+        }
+        for(var i=0;i<arr.length;i++){
+            var new_arr = arr[i]
+            for (var j=0;j<=i;j++){
+                document.write(new_arr[j]+"&nbsp");
+            }
+            document.write("<br>");
+        }
+        
+         
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

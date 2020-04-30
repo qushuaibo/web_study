@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        /*
+            流程控制语句：
+                顺序语句：代码按顺序执行
+                分支语句/选择结构/条件结构:根据条件不同，执行不同的操作
+                    单分支：
+                        if(判读条件){
+                            执行
+                        }
+                        
+                    多分支
+                        if(条件判读){
+                            执行
+                        }
+                        else if(条件){
+                            执行
+                        }
+                        else{
+                            执行
+                        }
+
+                        switch(表达式){
+                            case 常量：
+                            执行语句
+                            break
+                            case 常量2：
+                            执行语句
+                            break
+                            default：
+                                执行语句
+                        }
+                        确定的值优先使用switch
+                        一般不省略break  没有break会继续执行代码
+                        default也不省略
+                循环语句：训话执行一件事
+
+        */
+       var num = 7;
+       if(num%2 ==0){
+           alert(num+"是一个偶数");
+       }
+       else if(num==7){
+           alert("我是7")
+       }
+       else{
+           alert(num+"是一个奇数");
+       }
+
+       var grade = "b";
+       switch(grade){
+           case "a":
+               alert("80-100");
+               break;
+            case "b":
+                alert("80-70");
+                break;
+            default:
+                alert("出错")
+                break;
+       }
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

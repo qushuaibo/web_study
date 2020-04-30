@@ -1,0 +1,113 @@
+<!--
+ * @Descripttion: test
+ * @Author: jushuaibo
+ * @Date: 2020-04-03 01:26:42
+ * @LastEditors: jushuaibo
+ * @LastEditTime: 2020-04-03 03:21:54
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 100px;
+        height: 150px;
+        padding: 50px;
+        background-color: orange;
+        border: 1px solid black;
+        margin-top: 8%;
+        margin-left: 40%;
+      }
+      #div1 span {
+        font-size: 20px;
+        position: relative;
+        left: 5%;
+      }
+      #div1 button {
+        width: 50px;
+        height: 40px;
+
+        font-size: 15px;
+        position: relative;
+        margin-top: 10px;
+        height: 25%;
+        left: 20%;
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <script>
+      /* 
+            window.onload = function(){
+                写在这里的代码，是整个页面加载完成以后再运行的
+
+            }
+         */
+        // 通过id获取标签节点简化
+        function $(id) {
+            return document.getElementById(id)
+        }
+        var i =0; // 当前秒表的总秒数
+        var timer = null; // 全局变量一般设置为null
+        // 写法二  多用写法二
+      window.onload = function() {
+          $("start").onclick = function () {
+              // timer 设置为全局变量
+              timer = setInterval(function () {
+                  i++
+                  $("sec").innerHTML = doubleNum(i%60);
+                  $("min").innerHTML = doubleNum(parseInt(i/60)%60);
+                  $("hour").innerHTML =doubleNum(parseInt(i/3600));
+                },10);
+          }
+        // 暂停
+        $("pause").onclick = function(){
+            clearInterval(timer);
+        }
+        // 复位
+        $("reset").onclick = function () {
+            clearInterval(timer);
+            i=0;
+            $("sec").innerHTML = "00";
+            $("min").innerHTML ="00"; 
+            $("hour").innerHTML ="00";
+
+          }
+      };
+// ----------------------------------------------//
+      // 两位数显示
+      function doubleNum(n) {
+          if(n<10){
+              return "0"+n;
+          }
+          else{
+              return n;
+          }
+        }
+
+
+       
+    </script>
+  </head>
+  <body>
+    <div id="div1">
+      <span id="hour">00</span>
+      <span>:</span>
+      <span id="min">00</span>
+      <span>:</span>
+      <span id="sec">00</span>
+      <br />
+      <button id="start">开始</button>
+      <button id="pause">暂停</button>
+      <button id="reset">复位</button>
+    </div>
+  </body>
+  <!--   <script>
+    // 获取按钮
+    var oStart = document.getElementById("start");
+    alert(oStart);
+  </script> -->
+</html>
