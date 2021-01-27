@@ -1,0 +1,101 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 21:12:04
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 21:49:01
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        img {
+            border: none;
+        }
+
+        body {
+            background-color: #ecfaff;
+        }
+
+        .play {
+            width: 140;
+            height: 200;
+            position: relative;
+            margin: 200px auto 0;
+        }
+
+        ol {
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            z-index: 2;
+        }
+
+        ol li {
+            float: left;
+            margin-right: 3px;
+            display: inline;
+            cursor: pointer;
+            background-color: white;
+            border: 1px solid black;
+        }
+
+        .active {
+            padding: 3px 8px;
+            font-weight: bold;
+            color: white;
+            background: yellow;
+            position: relative;
+            bottom: 2px;
+        }
+    </style>
+    <script>
+        $(function () {
+            var aBtns = $("#play ol li");
+            var oUl = $("#play ul");
+            var aLis = oUl.find("li");
+
+            // 给所有的按钮添加点击事件
+            aBtns.click(function () {
+                $(this).attr("class", "active").siblings().attr("class", "");
+                // aBtns.attr("class","active");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="play" id="play">
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+        <ul>
+            <li><a href="https://www.baidu.con"><img src="../pic/a0.png" alt=""></a></li>
+            <li><a href="https://www.baidu.con"><img src="../pic/a1.png" alt=""></a></li>
+            <li><a href="https://www.baidu.con"><img src="../pic/a2.png" alt=""></a></li>
+            <li><a href="https://www.baidu.con"><img src="../pic/a3.png" alt=""></a></li>
+            <li><a href="https://www.baidu.con"><img src="../pic/a4.png" alt=""></a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

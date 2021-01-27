@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 11:44:31
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 12:24:33
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{width: 100px;height: 100px;background-color: red;}
+        #div2{width: 200px;height: 200px;border: 1px solid black;}
+    </style>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        /* 
+            remove()  删除元素节点 并不会保留原来节点上的事件和行为
+            detach()  删除节点  会保留
+         */
+         $(function(){
+             $("#div1").hover(function(){
+                 $(this).css("backgroundColor","red");
+             },function(){
+                 $(this).css("backgroundColor","blue");
+             })
+             $("button").click(function(){
+                 // remove 返回值就是删除的节点
+                 var node = $("#div1").detach();
+                 node.appendTo($("#div2"));
+             })
+         })
+    </script>
+</head>
+<body>
+    <button>删除节点</button>
+   <div id="div1" title="hello" class="box"></div> 
+   <div id="div2"></div> 
+</body>
+</html>

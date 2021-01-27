@@ -1,0 +1,57 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 12:28:33
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 12:39:18
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            add()  可以将节点组合 进行操作
+
+            slice   slice(start,end)  [start,end)
+         */
+        $(function () {
+            // 链式操作
+/*             $("div").add("span").add("ul li").css("backgroundColor", "red").click(function () {
+                alert("单击");
+            })
+                .mouseover(function () {
+                    $(this).css("backgroundColor", "blue")
+                })
+                .mouseout(function () {
+                    $(this).css("backgroundColor", "orange")
+                }) */
+
+
+                $("ul li").slice(1,3).css("backgroundColor","red");
+
+        })
+    </script>
+</head>
+
+<body>
+    <div>div</div>
+    <span>span</span>
+    <p>p</p>
+    <ul>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+        <li>111</li>
+    </ul>
+</body>
+
+</html>

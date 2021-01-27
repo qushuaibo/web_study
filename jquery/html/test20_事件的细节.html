@@ -1,0 +1,97 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-17 16:33:28
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-17 21:57:37
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        padding: 50px;
+    }
+
+    #div1 {
+        background-attachment: red;
+    }
+
+    #div2 {
+        background-color: blue;
+    }
+
+    #div3 {
+        background-color: orange;
+    }
+</style>
+<script src='../js/jquery-3.5.0.min.js'></script>
+<script>
+    /* 
+         [注]
+          不能为了使用jquery而使用JQ
+          - ev pageX clientX
+          - which
+                鼠标事件：button
+                    左键  1
+                    滚轮键 2
+                    右键 3
+                    
+                keydown:keyCode 键码 不区分大小写
+                keypress: charCode 字符码（区分大小写 只支持字符）
+          - preventDefault stopPropagation
+          
+          jq都是兼容后的
+     */
+    $(function () {
+        $("div").click(function (ev) {
+            alert(this.id);
+            // 阻止事件冒泡
+            ev.stopPropagation();
+        })
+
+        $("a").click(function (ev) {
+            //   ev.stopPropagation(); // 阻止事件冒泡
+            //   ev.preventDefault(); // 阻止默认行为
+            // 即阻止事件冒泡 又阻止默认行为
+            return false;
+        })
+
+        // $(document).click(function (ev) {
+        //     alert(ev.pageX + "," + ev.pageY); // 带滚动距离的
+        //     alert(ev.clientX + "," + ev.clientY); // 可视窗口为原点
+        // })
+
+        $(document).mousedown(function (ev) {
+           alert(ev.which) 
+        })
+        // 建码
+        // $(document).keydown(function(ev){
+        //     alert(ev.which);
+        // })
+
+        // charCode 区分大小写 不支持功能键
+        $(document).keypress(function(ev){
+            alert(ev.which);
+        })
+    })
+</script>
+
+<body style="height:3000px">
+    <div id='div1'>
+        <div id="div2">
+            <div id="div3">
+                <a href="https://www.baidu.com">百度</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

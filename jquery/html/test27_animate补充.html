@@ -1,0 +1,82 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 11:15:00
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 11:33:02
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+        #div1 {
+            position: absolute;
+            top: 300px;
+        }
+        #div2 {
+            background-color: blue;
+        }
+        .box{background-color: green;}
+    </style>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            停止动画的函数
+
+            delay()  延迟
+         */
+        $(function () {
+            /* 
+                小技巧 ：
+                    在每次调用animate的时候都调用stop
+                    
+             */
+            // $("#div1").hover(function () {
+            //     $("#div1").stop().animate({
+            //         width: 300,
+            //         height: 300
+            //     },2000)
+            // }, function () {
+            //     $(this).stop().animate({
+            //         height: 100,
+            //         width: 100
+            //     },2000)
+            // })
+
+            $('#div1').click(function(){
+                $("#div1").animate({width:300},3000).delay(3000).animate({height:300},2000)
+            })
+
+/*             $("#div2").click(function(){
+                // 停止第一个动画
+                // $("#div1").stop();
+
+                // 停止所有动画
+                // $("#div1").stop(true);
+
+                // 两个true 将当前的第一个动画直接到达目的值
+                // $("#div1").stop(true,true);
+
+                // 停止所有动画，并到达目的值
+                $("#div1").finish();
+            }) */
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+
+</html>

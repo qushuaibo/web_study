@@ -4,7 +4,7 @@
  * @Author: qushuaibo
  * @Date: 2020-04-30 17:55:32
  * @LastEditors: qushuaibo
- * @LastEditTime: 2020-04-30 18:08:25
+ * @LastEditTime: 2020-05-17 15:50:27
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -49,27 +49,35 @@
             //     $(this).html(i++);
             //  })
 
-             //3 给不同的事件添加不同的函数
-             $("#div1").on({
-                 click:function(){
-                     alert('点击');
-                 },
-                 mouseover:function () { 
-                     $(this).css("backgroundColor","blue")
-                  }
+            //3 给不同的事件添加不同的函数
+            $("#div1").on({
+                click: function () {
+                    alert('点击');
+                },
+                mouseover: function () {
+                    $(this).css("backgroundColor", "orange")
+                },
+                mouseout: function () {
+                    $(this).css("backgroundColor", "blue")
+                }
+            })
+            $("ul").on("click", "li", function () {
+                $(this).css("bockgroundColor", "red");
+            })
 
-             })
         })
     </script>
 </head>
 
 <body>
     <div id="div1"></div>
+    <p1>crtl+a数字加1</p1>
     <ul>
         <li>1</li>
-        <li>2</li>
+        <li class="box">2</li>
         <li>3</li>
-        <li>4</li>
+        <li class="box">4</li>
+        <li>5</li>
     </ul>
 </body>
 

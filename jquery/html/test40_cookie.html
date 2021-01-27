@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 16:36:18
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 16:54:02
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script src="../js/jquery.cookie.js"></script>
+    <script>
+        /* 
+            $.cookie()
+                调用格式
+                $.cookie(name) 通过name取值
+                $.cookie(name,value) 设置name和value
+                $.cookie(name,value{
+                    可选项
+                    raw :true
+                })
+                $.cookie(name,null); 删除cookie
+         */
+        $.cookie("变种人", "X教授", {
+            expires: 7,
+            // raw 默认false 进行编码 
+            raw: true
+        })
+        $.cookie("赛亚人", "贝吉塔", {
+            expires: 30,
+            raw: true
+        })
+        $.cookie("海贼王", "路飞", {
+            expires: 100
+        })
+
+        // alert($.cookie("变种人"));
+        // alert($.cookie("赛亚人"));
+        // alert($.cookie("海贼王"));
+
+        $(function () {
+            $("#btn1").click(function () {
+                $.cookie("赛亚人", null);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn1">删除cookie</button>
+</body>
+
+</html>

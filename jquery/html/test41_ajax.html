@@ -1,0 +1,67 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 16:54:47
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 17:06:40
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            $().load()
+            $().get()
+            $().post()
+         */
+        $(function () {
+            $("#btn1").click(function () {
+                // $.ajax({
+                //     type: "get",
+                //     url: "1.txt",
+                //     data: {
+
+                //     },
+                //     success: function (data, statuText, xhr) {
+                //         alert(data + "," + statuText + "," + xhr);
+                //     },
+                //     error: function (msg) {
+                //         alert(msg);
+                //     }
+
+                // })
+
+                // jsonp跨域
+                $.ajax({
+                    type:"get",
+                    url:"https://api.asilu.com/weather",
+                    data:{
+                        city:"青岛"
+                    },
+                    // 完成jsonp
+                    dataType:"jsonp",
+                    success:function(data,statuText){
+                        // alert(data+","+statuText);
+                        console.log(data);
+                        // 直接会转成对象
+                    },
+                    error:function(msg){
+                        alert(msg);
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <button id="btn1">下载数据</button>
+</body>
+
+</html>

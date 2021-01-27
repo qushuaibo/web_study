@@ -1,0 +1,62 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 17:08:06
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-06-30 09:34:37
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            load 方法
+            将url传入后，将下载到得数据直接填充到选中
+            得元素得innerHTML中
+            还可以选择满足条件的进行插入（2.txt h2)
+         */
+         $(function(){
+            $("button").click(function(){
+                $("div").load("2.txt h2",function(data,statusText,xhr){
+                    /* 
+                        data 下载得数据
+                        statusText 下载得状态 success
+                        xhr ajax对象  xhr.status 状态码
+                     */
+                    alert(data+","+statusText);
+                    alert(xhr.status);
+                });
+            }) 
+
+            $("button").eq(1).click(function(){
+                $.get("2.txt",function(data,statusText,xhr){
+                    alert(data);
+                })
+            })
+
+            
+            $("button").eq(2).click(function(){
+                $.post("1.post.php",{
+                    username:"tian",
+                    age:19,
+                    password:"123abc"
+                },function(data,statusText,xhr){
+                    alert(data);
+                })
+            })
+         })
+    </script>
+</head>
+<body>
+    <button>下载数据</button>
+    <button>get请求</button>
+    <button>post请求</button>
+    <div></div>
+    
+</body>
+</html>

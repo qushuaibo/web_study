@@ -1,0 +1,57 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-17 22:33:48
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-17 23:05:26
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style></style>
+    <!-- <script src="../js/jquery-3.5.0.min.js"></script> -->
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            val()  value  获取设置表单元素的值
+
+            size()  输入当前网页元素的个数
+
+            each 
+         */
+        $(function () {
+            // 只能返回第一个符合条件元素的值
+            // alert($("input").val());
+
+            // 会对所有获取到的元素进行赋值
+            // $("input").val("hello world");
+
+            //网页元素的个数
+            //  alert($("input").size()); //3.5的版本没有了
+            // alert($("input").length);
+
+            // 单个赋值
+            $("input").each(function (index, item) {
+                // alert(item + "," + index);
+                //// 返回的是一个原生的js对象  利用value赋值
+                // item.value= index;
+
+                // 将原生的js对象转为JQ，然后赋值
+                $(item).val(index);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <input type="text" value="aaa" name="" id="" />
+    <input type="text" value="bbb" name="" id="" />
+    <input type="text" value="ccc" name="" id="" />
+</body>
+
+</html>

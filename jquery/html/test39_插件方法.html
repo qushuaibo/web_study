@@ -1,0 +1,82 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 16:06:26
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 16:35:54
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+        }
+        p{position: absolute;}
+        em{position: absolute;}
+    </style>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            $.extend() 工具方法  $.xxx()
+            $.fn.extend() JQ方法 $().xxx()
+
+            JQ插件方法 可以给jq新增方法
+         */
+        $.extend({
+            aaa: function () {
+                alert("这是一个工具方法");
+            }
+        })
+        $.fn.extend({
+            aaa: function () {
+                alert("这是一个jq方法");
+            },
+            drag:function(){
+                // this指得是jq对象
+                // $(this).css("backgroundColor","red");
+
+                $(this).mousedown(function(ev){
+                    var offsetX = ev.clientX-$(this).offset().left;
+                    var offsetY = ev.clientY-$(this).offset().top;
+
+                    var _this = this;
+                    $(document).mousemove(function(ev){
+                        $(_this).css({
+                            left:ev.clientX-offsetX,
+                            top:ev.clientY-offsetY
+                        })
+                    })
+                })
+                $(document).mouseup(function(){
+                    $(document).off("mousemove");
+                })
+            }
+        })
+
+        $(function(){
+            $.aaa();
+            $("div,p,em").drag();
+            // $("div,p,em").css("backgroundColor","blue");
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p>p</p>
+    <em>em</em>
+</body>
+
+</html>

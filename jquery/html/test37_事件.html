@@ -1,0 +1,69 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 15:31:34
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 15:48:08
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            trigger()  主动触发 事件
+            ev.data   
+            ev.target(兼容后触发对象)
+            ev.type(输出事件类型)
+         */
+         $(function(){
+            // $("button").click(function(ev){
+            //     alert(ev.type);
+            //     alert(ev.target);
+            // })
+
+            //配合on使用 间接传入参数
+            // 可以给 系统传入参数
+            $("button").on("click",{username:"钢铁侠",age:"19"},function(ev){
+                // alert(ev.type);
+                // alert(ev.data.username);
+                // alert(ev.data.age);
+            })
+            
+            // $("button").on("click",function(){
+            //     alert(1);
+            // })
+
+            // 主动触发click 事件
+            // $("button").trigger("click");
+
+            $("#play").on("play",function(){
+                alert("开始播放音乐");
+            })
+            $("#play").on("next",function(){
+                alert("切换写一首音乐");
+            })
+
+            $("button").filter('#p_m').click(function(){
+                $("#play").trigger("play");
+            })
+            $("button").filter('#ne').click(function(){
+                $("#play").trigger("next");
+            })
+             
+         })
+    </script>
+</head>
+<body>
+   <button>按钮</button> 
+   
+   <button id='p_m'>播放</button>
+   <button id='ne'>下一首</button>
+
+   <div id="play"></div>
+</body>
+</html>

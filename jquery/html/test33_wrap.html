@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 12:16:02
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 12:21:39
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            wrap()  每一个获取到的元素单独包装
+            wrapAll()   整体包装
+            wrapInner()  内部包装
+            unwrap()   删除包装  没有不删除
+         */ $(function(){
+             // 给span节点包装
+
+            //  $("span").wrap("<p class='p'></p>");
+
+            //  $("span").wrapAll("<p class='p'></p>");
+
+            //  $("span").wrapInner("<p class='p'></p>");
+
+             $("span").unwrap();
+
+         })
+    </script>
+</head>
+<body>
+   <div>
+       <span>span</span>
+   </div> 
+   <span>span</span>
+   <span>span</span>
+   <span>span</span>
+</body>
+</html>

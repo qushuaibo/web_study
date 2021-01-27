@@ -1,0 +1,110 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-17 23:06:44
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-17 23:24:27
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+        }
+
+        #div1 {
+            background-color: red;
+        }
+
+        #div2 {
+            background-color: blue;
+        }
+    </style>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            hover(funcOver,funcOut)  同时添加移入移出
+
+            hide()    隐藏
+                第一个参数 动画持续的时间
+                第二个参数 回调函数 动画结束的时候执行的
+            show()    显示
+                动画效果 从左上角收起和展开
+
+            slideDown() 
+            slideUp()  动画效果，卷咋效果
+
+            fadeIn
+            fadeOut  淡入淡出
+
+            fadeTo(动画持续时间，透明度百分比(0-1)，回调函数)
+         */
+        $(function () {
+            // $("#div1").hover(function () {
+            //     //  $(this).html("移入");
+            //     $("#div2").hide(2000, function () {
+            //         $("#div1").html("移入");
+            //     });
+            // }, function () {
+            //     // $(this).html("移出");
+            //     $("#div2").show(2000, function () {
+            //         $("#div1").html("移出");
+            //     });
+            // })
+
+            // slideDown 和slideUp
+            // $("#div1").hover(function () {
+            //     //  $(this).html("移入");
+            //     $("#div2").slideDown(2000, function () {
+            //         $("#div1").html("移入");
+            //     });
+            // }, function () {
+            //     // $(this).html("移出");
+            //     $("#div2").slideUp(2000, function () {
+            //         $("#div1").html("移出");
+            //     });
+            // })
+
+            // fadeIn 和 fadeOut
+            // $("#div1").hover(function () {
+            //     //  $(this).html("移入");
+            //     $("#div2").fadeIn(2000, function () {
+            //         $("#div1").html("移入");
+            //     });
+            // }, function () {
+            //     // $(this).html("移出");
+            //     $("#div2").fadeOut(2000, function () {
+            //         $("#div1").html("移出");
+            //     });
+            // })
+
+            // fadeTo
+            $("#div1").hover(function () {
+                //  $(this).html("移入");
+                $("#div2").fadeTo(1000,1,function () {
+                    $("#div1").html("移入");
+                });
+            }, function () {
+                // $(this).html("移出");
+                $("#div2").fadeTo(1000,0.5,function () {
+                    $("#div1").html("移出");
+                });
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id='div1'></div>
+    <div id='div2'></div>
+
+</body>
+
+</html>

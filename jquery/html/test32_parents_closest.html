@@ -1,0 +1,42 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 12:08:59
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 12:14:53
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            parent()   获取父节点
+            parents()  获取父节点们 (可以选择)
+            closest()  必须传入参数 选择器  只获取第一个符合条件的元素
+                        从自己开始查找
+         */
+         $(function(){
+            // $("#div2").parent().css("backgroundColor","red");
+
+            // $("#div2").parents(".box").css("backgroundColor","red");
+
+            $("#div2").closest(".box").css("backgroundColor","red");
+
+
+         })
+    </script>
+</head>
+<body>
+   <div id="div1" class="box">
+       div1
+       <div id="div2" class="box">
+           div2
+       </div>
+   </div> 
+</body>
+</html>

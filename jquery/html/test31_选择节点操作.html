@@ -1,0 +1,51 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 11:56:30
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 12:07:16
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            // 都可以对结果进行选择
+            siblings()  除当前节点外的兄弟节点 还可以当选择器
+            nextAll()  preAll()  兄弟节点下面的所有节点
+            parentsUntil() nextUntil() prevUntil()
+         */
+         $(function(){
+            //  $("#p1").siblings().css("backgroundColor","red");
+
+            // 选择器
+            //  $("#p1").siblings("h1").css("backgroundColor","red");
+
+            // $("#p1").nextAll().css("backgroundColor","red")
+
+            // 从那到那
+            // $("#p1").nextUntil("h2").css("backgroundColor","red")
+
+            // 
+            $("#p1").parentsUntil("body").css("backgroundColor","red")
+
+         })
+    </script>
+</head>
+<body>
+   <div id="div1">
+       <h1>h1</h1>
+       <h2>h2</h2>
+       <p id="p1">p</p>
+       <h3>h3</h3>
+       <strong>strong</strong>
+       <h2>h2</h2>
+   </div> 
+   <h1>h1</h1>
+</body>
+</html>

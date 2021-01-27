@@ -1,0 +1,59 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-17 22:22:37
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-17 22:31:38
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        /* 
+            JQ 拖拽
+         */
+        $(function () {
+            $("div").mousedown(function (ev) {
+                var offsetX = ev.pageX - $(this).offset().left;
+                var offsetY = ev.pageY - $(this).offset().top;
+
+                // this是当前函数的div
+                var _this = this;
+                $(document).mousemove(function (ev) {
+                    $(_this).css({
+                        left: ev.pageX - offsetX,
+                        top: ev.pageY - offsetY
+                    })
+                })
+            })
+
+            $(document).mouseup(function () {
+                $(document).off("mousemove");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+</body>
+
+</html>

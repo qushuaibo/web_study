@@ -1,0 +1,86 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-17 15:42:05
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-17 16:01:32
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        $(function () {
+            // 4 事件委托
+            /* 
+               第一个参数 事件名称
+               第二个参数 触发对象的选择器
+               backgroundColor
+             */
+            $("#div1").on({
+                click: function () {
+                    alert('点击');
+                },
+                mouseover: function () {
+                    $(this).css("backgroundColor", "orange")
+                },
+                mouseout: function () {
+                    $(this).css("backgroundColor", "blue")
+                }
+            })
+            // 通过ul委托 
+            $("ul").on("click", "li", function () {
+                $(this).css("backgroundColor", "red");
+            })
+            var i = 6;
+            $("#btn1").click(function () {
+                // 新增li节点  
+                // 创建节点方法 
+                // html怎么写就写在$()
+                $(`<li>${i++ * 1}</li>`).appendTo($("ul"));
+            })
+
+            $("#cancel").click(function () {
+                // $("#div1").off(); // 取消所有事件
+                // $("#div1").off("click") // 取消点击事件
+                $("#div1").off("click",show) // 取消shou事件
+
+            })
+
+            function show() {
+                alert("show");
+            }
+            // 将show函数传给div1
+            $("#div1").click(show);
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <ul>
+        <li>1</li>
+        <li class="box">2</li>
+        <li>3</li>
+        <li class="box">4</li>
+        <li>5</li>
+    </ul>
+    <button id="btn1">增加节点</button>
+    <button id='cancel'>取消事件</button>
+</body>
+
+</html>

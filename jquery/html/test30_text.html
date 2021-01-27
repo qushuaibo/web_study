@@ -1,0 +1,39 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 11:50:26
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 11:55:42
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"> </script>
+    <script>
+        /* 
+            Jquery 标签间的内容 html()  相当于innerHTML
+            Jquery 标签间的纯文本 text()  相当于innerText
+
+         */
+         $(function(){
+            //  alert($("#div1").html());
+            //  alert($("#div1").text());
+
+            $("#div2").html("<em>em</em>div文本<strong>strong</strong>")
+            $("#div3").text("<em>em</em>div文本<strong>strong</strong>")
+
+
+
+         })
+    </script>
+</head>
+<body>
+<div id="div1"><em>em</em>div文本<strong>strong</strong></div>    
+<div id="div2"></div>
+<div id="div3"></div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-17 16:08:38
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-17 16:32:05
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #div1 {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            border: 1px solid black;
+            display: none
+        }
+
+        #close {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+    </style>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        $(function () {
+            // 居中
+            // 计算居中的top和left值
+            var top = $(window).scrollTop() + ($(window).height() - $("#div1").outerHeight(true)) / 2;
+            var left = ($(window).width() - $("#div1").outerWidth(true)) / 2;
+            // 将计算的值指定给left和top
+            $("#div1").css({
+                left: left,
+                top: top
+            })
+
+            // 同时绑定 scroll和resize事件
+            $(window).on("scroll resize", function () {
+                var top = $(window).scrollTop() + ($(window).height() - $("#div1").outerHeight(true)) / 2;
+                var left = ($(window).width() - $("#div1").outerWidth(true)) / 2;
+                // 将计算的值指定给left和top
+                $("#div1").css({
+                    left: left,
+                    top: top
+                })
+            })
+
+            //发布 
+            $("#issue").click(function () {
+                $("#div1").css("display", 'block');
+            })
+            // 关闭
+            $("#close").click(function () {
+                $("#div1").css("display", 'none');
+            })
+        })
+    </script>
+</head>
+
+<body style="height: 3000px;">
+    <button id="issue">发布</button>
+    <div id='div1'>
+        <input type="text" placeholder="用户名" />
+        <input type="text" placeholder="密码" />
+        <div id='close'>X</div>
+    </div>
+</body>
+
+</html>

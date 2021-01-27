@@ -1,0 +1,71 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 15:49:14
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 16:05:57
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            $()下的常用工具方法 
+                工具方法和我们封装的方法没有任何区别
+            JQ的方法调用$().xxx() 
+            JQ的工具方法 $.xxx()  
+            type()  输出当前数据类型
+            trim()  删除首位空格 Ecma5也引入了jquery的方法
+            inArray()  第一次出现的位置 ecma5中indexOf
+            proxy()   功能类似于bind  this指向
+            $.parseJSON()   JSON.parse() Esma5加了
+            makeArry()     相当于Array.from
+            noConflict()
+         */
+         $(function(){
+            var arr = [10,20,30];
+            var str = new String();
+            var d= new Date();
+            // alert(typeof(arr));
+            // alert(typeof(str));
+            // alert(typeof(d));
+            
+            // type更详细
+            // alert($.type(arr));
+            // alert($.type(str));
+            // alert($.type(d));
+
+            var str = " he l  llo  "
+            // alert("|"+str+"|");
+            // alert("|"+$.trim(str)+"|");
+
+            var arr = [10,20,30,40];
+            // alert($.inArray(30,arr));
+
+            // 给$函数一个别名
+            // var qian = $.noConflict();
+            // 防止因为
+            // var $ =10; // 等的影响
+
+            var nodes = document.getElementsByTagName("div");
+            // 和Array.from()一样
+            nodes = $.makeArray(nodes);
+            nodes.push("hello");
+            alert(nodes);
+
+         })
+
+    </script>
+</head>
+<body>
+   <div></div> 
+   <div></div> 
+   <div></div> 
+   <div></div> 
+</body>
+</html>

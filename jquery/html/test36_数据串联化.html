@@ -1,0 +1,36 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 12:39:54
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 15:30:42
+--> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script>
+        /* 
+            serialize()   将表单的数据拼接成querysting(查找字符串) name=value1&name2=value2
+            search()    ?name1=value1&name2=value2
+            querystring name1 = value1&name2=value2
+
+            serializeArray()  // 返回数组
+         */
+         $(function(){
+            alert($("input").serialize());
+
+            console.log($("input").serializeArray());
+         })
+    </script>
+</head>
+<body>
+    <input type="text" name="a" value="1"/>    
+    <input type="text" name="b" value="2"/>    
+    <input type="text" name="c" value="3"/>    
+</body>
+</html>

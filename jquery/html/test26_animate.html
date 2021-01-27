@@ -1,0 +1,98 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-18 10:29:29
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-18 11:14:05
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+        #div1 {
+            position: absolute;
+            top: 300px;
+        }
+        #div2 {
+            background-color: blue;
+        }
+        .box{background-color: green;}
+    </style>
+    <script src="../js/jquery.1.10.2.min.js"></script>
+    <script src="../js/jquery-ui.min.js"></script>
+    <script>
+        /* 
+            animate  有生命的
+                默认:慢快慢运动
+                    匀速 "linear"
+                    慢快慢 "swing"
+
+            扩展 更多的animate运动形式
+             引入 jquery-ui
+                https://www.jqueryui.org.cn/demo/5735
+
+         */
+        $(function () {
+            // $("#div1").hover(function () {
+            //     $("#div2").animate({
+            //         width: 300,
+            //         height: 300,
+            //         opacity: 0.5
+            //     }, 4000, function () {
+            //         $("#div1").html("移入");
+            //     })
+            // }, function () {
+            //     $("#div2").animate({
+            //         width: 200,
+            //         height: 200,
+            //         opacity: 1
+            //     }, 4000, function () {
+            //         $("#div1").html("移出");
+            //     })
+            // })
+
+            // $("#div1").click(function () {
+            //     $("#div1").animate({
+            //         width: 300,
+            //         height: 300
+            //     }, 4000, "easeOutQuart");
+            //     $("#div2").animate({
+            //         width: 300,
+            //         height: 300
+            //     }, 4000, "easeInCubic")
+            // })
+
+           /* 
+                有了jquery_ui 可以有动画效果
+                jquery_ui 增强了jquery
+            */ 
+            $("button").eq(0).click(function(){
+                // 本来jquery不能使用4000
+                $("#div1").addClass("box",4000);
+            })
+            $("button").eq(1).click(function(){
+                $("#div1").removeClass("box",4000);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div id="div1" ></div>
+    <div id="div2"></div>
+    <button>添加class</button>
+    <button>删除class</button>
+
+</body>
+
+</html>

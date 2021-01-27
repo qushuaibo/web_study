@@ -1,0 +1,47 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-05-17 21:59:09
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-05-17 22:13:58
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0px;padding: 0px;}
+        #div1{width: 200px;height: 200px;background-color: orange;margin: 30px;position: relative;}
+        #div2{width: 100px;height: 100px;background-color: blue;margin: 20px;}
+    </style>
+    <script src="../js/jquery-3.5.0.min.js"></script>
+    <script>
+        /* 
+            offset()  posotion()
+            offsetParent()
+         */
+         $(function(){
+             // 会获取到auto  无法计算
+            //  alert($("#div1").css("left"));
+
+            // offset 当前节点距离最左的距离 无论定位方式是absolute还是relative
+            // alert($("#div2").offset().left);
+
+            //position 直接获取，当前元素，距离第一个定位父亲节点的距离，包括margin
+            // alert($("#div2").position().left);
+
+            // offsetParent  第一个有定位的父节点，最终找到html节点
+            $("#div2").offsetParent().css("backgroundColor","red");
+         })
+    </script>
+</head>
+<body>
+    <div id='div1'>
+        <div id='div2'></div>
+    </div>
+    
+</body>
+</html>

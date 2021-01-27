@@ -1,0 +1,45 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: qushuaibo
+ * @Date: 2020-06-02 18:44:24
+ * @LastEditors: qushuaibo
+ * @LastEditTime: 2020-06-06 17:45:49
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 400px;
+            height: 400px;
+            background-color: orange;}
+        #div2{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            oDiv = document.getElementById("div1");
+            oDiv2 = document.getElementById("div2");
+            oDiv.onmouseout = function () {
+                oDiv2.innerHTML = "离开";
+            }
+            oDiv.onmouseover = function () {
+                document.title = "good";
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+
+</html>
